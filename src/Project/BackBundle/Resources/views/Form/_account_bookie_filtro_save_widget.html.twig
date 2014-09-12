@@ -1,0 +1,9 @@
+{% form_theme form _self %}
+
+{% block _account_bookie_filtro_save_widget %}
+<div class="controls">
+{{ block('submit_widget') }}
+</div>
+{% endblock %}
+
+{{ form_widget(form.name) }}

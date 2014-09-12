@@ -1,0 +1,71 @@
+{% extends '::base.html.twig' %}
+
+{% block pagesScriptsBottom %}
+{%endblock%}
+
+{% block pageContent  %}
+<div class="main-container container-fluid" id="sinlogin">
+	<a class="menu-toggler" id="menu-toggler" href="#"> <span class="menu-text"></span> </a>
+
+	{% include '::sidebar.html.twig'  with {'clase': 'gris'}  %}
+
+	<div class="main-content">
+
+		{# include 'ProjectBackBundle:Architecture:breadcrumb.html.twig'  with {'clase': 'gris'} #}
+		<div class="page-content">
+
+			<div class="row-fluid">
+				<div class="span12">
+					<!--PAGE CONTENT BEGINS-->
+					<!--PAGE CONTENT BEGINS-->
+
+					<div class="row-fluid">
+						<div class="span12">
+							<div class="row-fluid">
+								<div class="span6">
+									<div class="dataTables_info" id="sample-table-2_info">
+										{{ contadorImagenes }} Imagenes parseadas
+									</div>
+								</div>
+							</div>
+							<div class="row-fluid">
+								<div class="span6">
+									<div class="dataTables_info" id="sample-table-2_info">
+										{{ contadorPronosticos}} Pronosticos parseados
+									</div>
+								</div>
+							</div>
+							<div class="row-fluid">
+								<div class="span6">
+									<div class="dataTables_info" id="sample-table-2_info">
+										{{ contadorNoticias }} Noticias parseadas
+									</div>
+								</div>
+							</div>
+
+							{%if error|length%}
+							<div class="row-fluid">
+								<div class="span6">
+									<div class="dataTables_info" id="sample-table-2_info">
+										<h4>Errores detectados al ejecutar el cron</h4>
+										
+										{%for element in error%}
+										<p>{{ element }}</p>
+										{%endfor%}
+									</div>
+								</div>
+							</div>
+							{%endif%}
+
+						</div><!--/span-->
+					</div><!--/row-->
+					<div class="hr hr-18 dotted hr-double"></div>
+
+					<!--PAGE CONTENT ENDS-->
+				</div><!--/.span-->
+			</div><!--/.row-fluid-->
+		</div><!--/.page-content-->
+	</div><!--/.main-content-->
+</div><!--/.main-container-->
+
+{%endblock%}

@@ -1,0 +1,47 @@
+{% extends '::base.html.twig' %}
+{% block pagesScriptsBottom %}
+		<script src="{{asset('admin/js/x-editable/ace-editable.min.js')}}"></script>
+		<script src="{{asset('admin/js/bootbox.min.js')}}"></script>
+		<script src="{{asset('admin/js/x-editable/bootstrap-editable.min.js')}}"></script>
+		<script src="{{asset('admin/js/bootstrap-wysiwyg.min.js')}}"></script>
+		<script src="{{asset('admin/js/jquery.easy-pie-chart.min.js')}}"></script>
+		<script src="{{asset('admin/js/flot/jquery.flot.min.js')}}"></script>
+		<script src="{{asset('admin/js/flot/jquery.flot.pie.min.js')}}"></script>
+		<script src="{{asset('admin/js/flot/jquery.flot.resize.min.js')}}"></script>
+		<script src="{{asset('admin/js/jquery.gritter.min.js')}}"></script>
+		<script src="{{asset('admin/js/jquery.hotkeys.min.js')}}"></script>
+		<script src="{{asset('admin/js/jquery.slimscroll.min.js')}}"></script>
+		<script src="{{asset('admin/js/jquery.sparkline.min.js')}}"></script>
+		<script src="{{asset('admin/js/select2.min.js')}}"></script>
+{%endblock%}
+{% block pageContent  %}
+<div class="main-container container-fluid" id="sinlogin">
+	<a class="menu-toggler" id="menu-toggler" href="#"> <span class="menu-text"></span> </a>
+
+	{% include '::sidebar.html.twig'  with {'clase': 'gris'}  %}
+
+	<div class="main-content">
+
+		{# include 'ProjectBackBundle:Architecture:breadcrumb.html.twig'  with {'clase': 'gris'} #}
+		<div class="page-content">
+
+			{# include 'ProjectBackBundle:Helpers:page-header.html.twig'  with {'titulo': 'Panel de control','subtitulo':'Vista de elementos'}  #}
+
+			<div class="row-fluid">
+				<div class="span12">
+					<!--PAGE CONTENT BEGINS-->
+
+					{% block fos_user_content %}
+					{% endblock fos_user_content %}
+
+					
+
+					<!--PAGE CONTENT ENDS-->
+				</div><!--/.span-->
+			</div><!--/.row-fluid-->
+		</div><!--/.page-content-->
+	</div><!--/.main-content-->
+</div><!--/.main-container-->
+{# include 'ProjectBackBundle:Helpers:users.html.twig'  with {'clase': 'gris'}  #}
+
+{%endblock%}

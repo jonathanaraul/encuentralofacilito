@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Email</title>
+	</head>
+	<body>
+		<h1>Registro en casas de apuestas</h1>
+		<div class="formulario" style="padding: 10px;;border: 5px outset #FFCE15;">
+
+			<h3>Se ha producido un nuevo registro en casas de apuestas</h3>
+			<p>
+				Los datos son los siguientes:
+			</p>
+			<ul>
+				<li>
+					Id: {{object.id}}
+				</li>
+				<li>
+					Nombre {{object.nombre}}
+				</li>
+				<li>
+					Email {{object.email}}
+				</li>
+				<li>
+					Comentarios {{object.comentarios}}
+				</li>
+				<li>
+					Fecha de Registro {{object.created.format('d-m-Y H:i:s')}}
+				</li>
+				<li>
+					Bookies:
+					{%for element in object.bookies%}
+					{{element.nombre}}-
+					{%endfor%}
+				</li>
+				<li>
+					Ip {{object.ip}}
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

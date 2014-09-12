@@ -1,0 +1,365 @@
+<div class="sidebar" id="sidebar">
+	<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+		<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+			<button class="btn btn-small btn-success" onclick="document.location.href='#';">
+				<i class="icon-home"></i>
+			</button>
+
+			<button class="btn btn-small btn-info">
+				<i class="icon-pencil"></i>
+			</button>
+
+			<button class="btn btn-small btn-warning">
+				<i class="icon-group"></i>
+			</button>
+
+			<button class="btn btn-small btn-danger">
+				<i class="icon-cogs"></i>
+			</button>
+		</div>
+
+		<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+			<span class="btn btn-success"></span>
+
+			<span class="btn btn-info"></span>
+
+			<span class="btn btn-warning"></span>
+
+			<span class="btn btn-danger"></span>
+		</div>
+	</div><!--#sidebar-shortcuts-->
+
+	<ul class="nav nav-list">
+
+		{% if is_granted("IS_AUTHENTICATED_REMEMBERED") == false%}
+		<li {% if app.request.attributes.get('_route') == 'fos_user_security_login' %}class="active"{%endif%}>
+			<a href="{{ path('fos_user_security_login') }}" > <i class="icon-key"></i> <span class="menu-text"> Iniciar sesión </span> </a>
+		</li>
+		<li {% if app.request.attributes.get('_route') == 'fos_user_registration_register' %}class="active"{%endif%}>
+			<a href="{{ path('fos_user_registration_register') }}"> <i class="icon-group"></i> <span class="menu-text"> Registro </span> </a>
+		</li>
+		{%else%}
+		<li {% if app.request.attributes.get('_route') == 'project_back_homepage' %}class="active"{%endif%}>
+			<a href="{{ path('project_back_homepage') }}"> <i class="icon-dashboard"></i> <span class="menu-text"> Panel de Control </span> </a>
+		</li>
+		<li {% if 
+		
+		app.request.attributes.get('_route') == 'project_back_parser_acceso_list' or  
+		app.request.attributes.get('_route') == 'project_back_parser_acceso_create' or  
+		app.request.attributes.get('_route') == 'project_back_parser_acceso_edit' or  
+		app.request.attributes.get('_route') == 'project_back_parser_fuente_list' or  
+		app.request.attributes.get('_route') == 'project_back_parser_fuente_create' or  
+		app.request.attributes.get('_route') == 'project_back_parser_fuente_edit' or  
+		app.request.attributes.get('_route') == 'project_back_parser_fuente_categoria_list' or  
+		app.request.attributes.get('_route') == 'project_back_parser_fuente_categoria_create' or  
+		app.request.attributes.get('_route') == 'project_back_parser_fuente_categoria_edit' or  
+		app.request.attributes.get('_route') == 'project_back_parser_fuente_tipo_list' or  
+		app.request.attributes.get('_route') == 'project_back_parser_fuente_tipo_create' or  
+		app.request.attributes.get('_route') == 'project_back_parser_fuente_tipo_edit' or 
+		app.request.attributes.get('_route') == 'project_back_parser_imagen_list' or  
+		app.request.attributes.get('_route') == 'project_back_parser_imagen_create' or  
+		app.request.attributes.get('_route') == 'project_back_parser_imagen_edit' or
+		app.request.attributes.get('_route') == 'project_back_parser_noticia_list' or  
+		app.request.attributes.get('_route') == 'project_back_parser_noticia_create' or  
+		app.request.attributes.get('_route') == 'project_back_parser_noticia_edit' or  
+		app.request.attributes.get('_route') == 'project_back_parser_pronostico_list' or  
+		app.request.attributes.get('_route') == 'project_back_parser_pronostico_create' or  
+		app.request.attributes.get('_route') == 'project_back_parser_pronostico_edit' or  
+		app.request.attributes.get('_route') == 'project_back_parser_error_list' or  
+		app.request.attributes.get('_route') == 'project_back_parser_error_create' or  
+		app.request.attributes.get('_route') == 'project_back_parser_error_edit' 
+		%}class="open"{%endif%}>
+			<a href="#" class="dropdown-toggle"> <i class="icon-globe"></i> <span class="menu-text"> Parser </span> <b class="arrow icon-angle-down"></b> </a>
+
+			<ul class="submenu" {% if 
+		app.request.attributes.get('_route') == 'project_back_parser_acceso_list' or  
+		app.request.attributes.get('_route') == 'project_back_parser_acceso_create' or  
+		app.request.attributes.get('_route') == 'project_back_parser_acceso_edit' or  
+		app.request.attributes.get('_route') == 'project_back_parser_fuente_list' or 
+		app.request.attributes.get('_route') == 'project_back_parser_listados' or 
+		app.request.attributes.get('_route') == 'project_back_parser_fuente_create' or  
+		app.request.attributes.get('_route') == 'project_back_parser_fuente_edit' or  
+		app.request.attributes.get('_route') == 'project_back_parser_fuente_categoria_list' or  
+		app.request.attributes.get('_route') == 'project_back_parser_fuente_categoria_create' or  
+		app.request.attributes.get('_route') == 'project_back_parser_fuente_categoria_edit' or  
+		app.request.attributes.get('_route') == 'project_back_parser_fuente_tipo_list' or  
+		app.request.attributes.get('_route') == 'project_back_parser_fuente_tipo_create' or  
+		app.request.attributes.get('_route') == 'project_back_parser_fuente_tipo_edit' or 
+		app.request.attributes.get('_route') == 'project_back_parser_imagen_list' or  
+		app.request.attributes.get('_route') == 'project_back_parser_imagen_create' or  
+		app.request.attributes.get('_route') == 'project_back_parser_imagen_edit' or  
+		app.request.attributes.get('_route') == 'project_back_parser_noticia_list' or  
+		app.request.attributes.get('_route') == 'project_back_parser_noticia_edit' or  
+		app.request.attributes.get('_route') == 'project_back_parser_pronostico_list' or  
+		app.request.attributes.get('_route') == 'project_back_parser_pronostico_edit' or  
+		app.request.attributes.get('_route') == 'project_back_parser_error_list' or  
+		app.request.attributes.get('_route') == 'project_back_parser_error_create' or  
+		app.request.attributes.get('_route') == 'project_back_parser_error_edit'
+
+			%}  style="display: block;"{%endif%}>
+				
+                {% if is_granted('ROLE_ADMIN')%}
+				<li {% if 
+				app.request.attributes.get('_route') == 'project_back_parser_listados'
+				%}class="active"{%endif%}>
+					<a href="{{path('project_back_parser_listados')}}"> <i class="icon-double-angle-right"></i> Listados </a>
+				</li>
+				<li {% if 
+				app.request.attributes.get('_route') == 'project_back_parser_fuente_list' or
+				app.request.attributes.get('_route') == 'project_back_parser_fuente_create' or
+				app.request.attributes.get('_route') == 'project_back_parser_fuente_edit'
+				%}class="active"{%endif%}>
+					<a href="{{path('project_back_parser_fuente_list')}}"> <i class="icon-double-angle-right"></i> Fuentes </a>
+				</li>
+				<li {% if 
+				app.request.attributes.get('_route') == 'project_back_parser_fuente_categoria_list' or
+				app.request.attributes.get('_route') == 'project_back_parser_fuente_categoria_create' or
+				app.request.attributes.get('_route') == 'project_back_parser_fuente_categoria_edit'				
+				%}class="active"{%endif%}>
+					<a href="{{path('project_back_parser_fuente_categoria_list')}}"> <i class="icon-double-angle-right"></i> Fuentes Categorias</a>
+				</li>
+				<li {% if 
+				app.request.attributes.get('_route') == 'project_back_parser_fuente_tipo_list' or 
+				app.request.attributes.get('_route') == 'project_back_parser_fuente_tipo_create' or
+				app.request.attributes.get('_route') == 'project_back_parser_fuente_tipo_edit'
+				%}class="active"{%endif%}>
+					<a href="{{path('project_back_parser_fuente_tipo_list')}}"> <i class="icon-double-angle-right"></i> Fuentes Tipos </a>
+				</li>
+				{%endif%}
+				<li {% if 
+				app.request.attributes.get('_route') == 'project_back_parser_imagen_list' or
+				app.request.attributes.get('_route') == 'project_back_parser_imagen_create' or
+				app.request.attributes.get('_route') == 'project_back_parser_imagen_edit'
+				%}class="active"{%endif%}>
+					<a href="{{path('project_back_parser_imagen_list')}}"> <i class="icon-double-angle-right"></i> Imagenes </a>
+				</li>
+				<li {% if 
+				app.request.attributes.get('_route') == 'project_back_parser_noticia_list' or
+				app.request.attributes.get('_route') == 'project_back_parser_noticia_edit' 
+				%}class="active"{%endif%}>
+					<a href="{{path('project_back_parser_noticia_list')}}"> <i class="icon-double-angle-right"></i> Noticias </a>
+				</li>
+				<li {% if 
+				app.request.attributes.get('_route') == 'project_back_parser_pronostico_list' or
+				app.request.attributes.get('_route') == 'project_back_parser_pronostico_edit'  
+				%}class="active"{%endif%}>
+					<a href="{{path('project_back_parser_pronostico_list')}}"> <i class="icon-double-angle-right"></i> Pronosticos </a>
+				</li>
+				<li {% if 
+				app.request.attributes.get('_route') == 'project_back_parser_acceso_list' or
+				app.request.attributes.get('_route') == 'project_back_parser_acceso_create' or
+				app.request.attributes.get('_route') == 'project_back_parser_acceso_edit'
+				%}class="active"{%endif%}>
+					<a href="{{path('project_back_parser_acceso_list')}}"> <i class="icon-double-angle-right"></i> Accesos </a>
+				</li>
+				<li {% if 
+				app.request.attributes.get('_route') == 'project_back_parser_error_list' or
+				app.request.attributes.get('_route') == 'project_back_parser_error_edit'  
+				%}class="active"{%endif%}>
+					<a href="{{path('project_back_parser_error_list')}}"> <i class="icon-double-angle-right"></i> Log errores </a>
+				</li>
+			</ul>
+		</li>
+		{#{% if is_granted('ROLE_ADMIN')%}#}
+		<li {% if 
+		app.request.attributes.get('_route') == 'project_back_peticion_pin_paysafecard_list' or   
+		app.request.attributes.get('_route') == 'project_back_peticion_pin_paysafecard_edit' 
+		%}class="active"{%endif%}>
+			<a href="{{path('project_back_peticion_pin_paysafecard_list')}}"> <i class="icon-credit-card"></i> <span class="menu-text"> Paysafecard </span>
+			</a>
+		</li>
+		<li {% if 
+		app.request.attributes.get('_route') == 'project_back_registro_casas_apuestas_list' or  
+		app.request.attributes.get('_route') == 'project_back_registro_casas_apuestas_edit' 
+		%}class="active"{%endif%}>
+			<a href="{{path('project_back_registro_casas_apuestas_list')}}"> <i class="icon-book"></i> <span class="menu-text"> Registro en Casas </span>
+			</a>
+		</li>
+		<li {% if 
+		app.request.attributes.get('_route') == 'project_back_bookies_list' or   
+		app.request.attributes.get('_route') == 'project_back_bookies_edit' 
+		%}class="active"{%endif%}>
+			<a href="{{path('project_back_bookies_list')}}"> <i class="icon-credit-card"></i> <span class="menu-text"> 
+			Bookies </span>
+			</a>
+		</li>
+		<li {% if 
+		app.request.attributes.get('_route') == 'project_back_blocks_bookies_list' or   
+		app.request.attributes.get('_route') == 'project_back_blocks_bookies_edit' 
+		%}class="active"{%endif%}>
+			<a href="{{path('project_back_blocks_bookies_list')}}"> <i class="icon-credit-card"></i> <span class="menu-text"> 
+			Bloque bookies </span>
+			</a>
+		</li>
+		<li {% if 
+		app.request.attributes.get('_route') == 'project_back_help_steps_bookie_list' or   
+		app.request.attributes.get('_route') == 'project_back_help_steps_bookie_edit' or
+		app.request.attributes.get('_route') == 'project_back_help_steps_bookie_create'
+		%}class="active"{%endif%}>
+			<a href="{{path('project_back_help_steps_bookie_list')}}"> <i class="icon-credit-card"></i> <span class="menu-text"> 
+			Ayuda bookies </span>
+			</a>
+		</li>
+		<li {% if 
+		app.request.attributes.get('_route') == 'project_back_payment_methods_list' or   
+		app.request.attributes.get('_route') == 'project_back_payment_methods_edit' or
+		app.request.attributes.get('_route') == 'project_back_payment_methods_create'
+		%}class="active"{%endif%}>
+			<a href="{{path('project_back_payment_methods_list')}}"> <i class="icon-credit-card"></i> <span class="menu-text"> 
+			M&eacute;todos de pago </span>
+			</a>
+		</li>
+		<li {% if 
+		app.request.attributes.get('_route') == 'project_back_account_bookie_list' or   
+		app.request.attributes.get('_route') == 'project_back_account_bookie_edit' or
+		app.request.attributes.get('_route') == 'project_back_account_bookie_create'
+		%}class="active"{%endif%}>
+			<a href="{{path('project_back_account_bookie_list')}}"> <i class="icon-credit-card"></i> <span class="menu-text"> 
+			Usuarios Bookies </span>
+			</a>
+		</li>
+		<li {% if 
+		app.request.attributes.get('_route') == 'project_back_tracking_site_list' or   
+		app.request.attributes.get('_route') == 'project_back_tracking_site_edit' or
+		app.request.attributes.get('_route') == 'project_back_tracking_site_create'
+		%}class="active"{%endif%}>
+			<a href="{{path('project_back_tracking_site_list')}}"> <i class="icon-credit-card"></i> <span class="menu-text"> 
+			Estadisticas </span>
+			</a>
+		</li>
+		<li {% if 
+		app.request.attributes.get('_route') == 'project_back_tracked_webs_list' or   
+		app.request.attributes.get('_route') == 'project_back_tracked_webs_edit' or
+		app.request.attributes.get('_route') == 'project_back_tracked_webs_create'
+		%}class="active"{%endif%}>
+			<a href="{{path('project_back_tracked_webs_list')}}"> <i class="icon-credit-card"></i> <span class="menu-text"> 
+			Webs </span>
+			</a>
+		</li>
+		<li {% if 
+		app.request.attributes.get('_route') == 'project_back_links_blogs_list' or   
+		app.request.attributes.get('_route') == 'project_back_links_blogs_edit' or
+		app.request.attributes.get('_route') == 'project_back_links_blogs_create'
+		%}class="active"{%endif%}>
+			<a href="{{path('project_back_links_blogs_list')}}"> <i class="icon-credit-card"></i> <span class="menu-text"> Links Blogs </span>
+			</a>
+		</li>
+		<li {% if 
+		app.request.attributes.get('_route') == 'project_back_votaciones_foro' 
+		%}class="active"{%endif%}>
+			<a href="{{path('project_back_votaciones_foro')}}"> <i class="icon-credit-card"></i> <span class="menu-text"> 
+			Votaciones Foro </span>
+			</a>
+		</li>
+
+       <li {% if 
+		
+		app.request.attributes.get('_route') == 'project_back_liga_deportiva_puntos_ld' or  
+		app.request.attributes.get('_route') == 'project_back_liga_deportiva_corrector_ld' 
+
+		%}class="open"{%endif%}>
+			<a href="#" class="dropdown-toggle"> <i class="icon-globe"></i> <span class="menu-text"> Liga Deportiva </span> <b class="arrow icon-angle-down"></b> </a>
+
+			<ul class="submenu" {% if 
+		app.request.attributes.get('_route') == 'project_back_liga_deportiva_puntos_ld' or  
+		app.request.attributes.get('_route') == 'project_back_liga_deportiva_corrector_ld' or
+		app.request.attributes.get('_route') == 'project_back_liga_deportiva_recorrector_ld'
+			%}  style="display: block;"{%endif%}>
+				
+				<li {% if 
+				app.request.attributes.get('_route') == 'project_back_liga_deportiva_puntos_ld'
+				%}class="active"{%endif%}>
+					<a href="{{path('project_back_liga_deportiva_puntos_ld')}}"> <i class="icon-double-angle-right"></i> Puntos LD </a>
+				</li>
+				<li {% if 
+				app.request.attributes.get('_route') == 'project_back_liga_deportiva_corrector_ld' 
+				
+				%}class="active"{%endif%}>
+					<a href="{{path('project_back_liga_deportiva_corrector_ld')}}"> <i class="icon-double-angle-right"></i> Corrector LD </a>
+				</li>
+				<li {% if 
+				app.request.attributes.get('_route') == 'project_back_liga_deportiva_recorrector_ld' 
+				
+				%}class="active"{%endif%}>
+					<a href="{{path('project_back_liga_deportiva_recorrector_ld')}}"> <i class="icon-double-angle-right"></i> Recorrector LD </a>
+				</li>
+			</ul>
+		</li>
+
+		<li {% if 
+		app.request.attributes.get('_route') == 'project_back_picks_list' or   
+		app.request.attributes.get('_route') == 'project_back_picks_edit'
+		%}class="active"{%endif%}>
+			<a href="{{path('project_back_picks_list')}}"> <i class="icon-credit-card"></i> <span class="menu-text"> 
+			Pick Foro </span>
+			</a>
+		</li>
+		
+
+<li {% if 
+		
+		app.request.attributes.get('_route') == 'project_back_maestros_competicion_list' or  
+		app.request.attributes.get('_route') == 'project_back_maestros_competicion_create' or
+		app.request.attributes.get('_route') == 'project_back_maestros_competicion_edit' or    
+		app.request.attributes.get('_route') == 'project_back_maestros_deporte_list' or 
+		app.request.attributes.get('_route') == 'project_back_maestros_deporte_create' or
+		app.request.attributes.get('_route') == 'project_back_maestros_deporte_edit'  
+
+		%}class="open"{%endif%}>
+			<a href="#" class="dropdown-toggle"> <i class="icon-globe"></i> <span class="menu-text"> Maestros </span> <b class="arrow icon-angle-down"></b> </a>
+
+			<ul class="submenu" {% if 
+		app.request.attributes.get('_route') == 'project_back_maestros_competicion_list' or  
+		app.request.attributes.get('_route') == 'project_back_maestros_competicion_create' or
+		app.request.attributes.get('_route') == 'project_back_maestros_competicion_edit' or    
+		app.request.attributes.get('_route') == 'project_back_maestros_deporte_list' or 
+		app.request.attributes.get('_route') == 'project_back_maestros_deporte_create' or
+		app.request.attributes.get('_route') == 'project_back_maestros_deporte_edit'  
+			%}  style="display: block;"{%endif%}>
+				
+				<li {% if 
+		app.request.attributes.get('_route') == 'project_back_maestros_competicion_list' or  
+		app.request.attributes.get('_route') == 'project_back_maestros_competicion_create' or
+		app.request.attributes.get('_route') == 'project_back_maestros_competicion_edit' 
+				%}class="active"{%endif%}>
+					<a href="{{path('project_back_maestros_competicion_list')}}"> <i class="icon-double-angle-right"></i> Competicion </a>
+				</li>
+				<li {% if 
+		app.request.attributes.get('_route') == 'project_back_maestros_deporte_list' or 
+		app.request.attributes.get('_route') == 'project_back_maestros_deporte_create' or
+		app.request.attributes.get('_route') == 'project_back_maestros_deporte_edit'  
+				
+				%}class="active"{%endif%}>
+					<a href="{{path('project_back_maestros_deporte_list')}}"> <i class="icon-double-angle-right"></i> Deportes </a>
+				</li>
+				
+			</ul>
+		</li>
+
+
+
+
+		{#{%endif%}#}
+		<li {% if app.request.attributes.get('_route') == 'fos_user_profile_show' %}class="active"{%endif%}>
+			<a href="{{ path('fos_user_profile_show') }}"> <i class="icon-eye-open"></i> <span class="menu-text"> Mi Perfil </span> </a>
+		</li>
+		<li {% if app.request.attributes.get('_route') == 'fos_user_profile_edit' %}class="active"{%endif%}>
+			<a href="{{ path('fos_user_profile_edit') }}"> <i class="icon-edit"></i> <span class="menu-text"> Editar Perfil </span> </a>
+		</li>
+		<li >
+			<a href="{{ path('fos_user_security_logout') }}"> <i class="icon-off"></i> <span class="menu-text"> Cerrar sesión </span> </a>
+		</li>
+
+
+		
+
+		{%endif%}
+
+
+		
+	</ul><!--/.nav-list-->
+
+	<div class="sidebar-collapse" id="sidebar-collapse">
+		<i class="icon-double-angle-left"></i>
+	</div>
+</div>

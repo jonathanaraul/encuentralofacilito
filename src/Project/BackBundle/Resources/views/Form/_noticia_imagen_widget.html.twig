@@ -1,0 +1,14 @@
+{% form_theme form _self %}
+
+{% block _noticia_imagen_widget %}
+<div class="row-fluid">
+	<div class="span3">
+		<label> {{ block('choice_widget') }}</label>
+					<h6 class="pink">
+				<a href="#modal-form" role="button" class="blue" data-toggle="modal"> Selector de imagen </a>
+			</h6>
+	</div>
+</div>
+{% endblock %}
+
+{{ form_widget(form.name) }}

@@ -1,0 +1,58 @@
+body{
+	position: relative;
+}
+
+#ecd_opt_in_banner
+{	
+	height: auto;
+	width: 100%;
+	z-index: 99999;
+	padding-bottom: 10px;
+	background-color: white;	
+}
+
+#ecd_opt_in_banner div{
+	padding: 4px 15px;
+	border: 1px solid black;
+}
+
+#ecd_opt_in_banner label
+{
+	vertical-align: middle;
+	float: left;
+}
+
+#ecd_opt_in_banner input[type=checkbox]
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+#ecd_opt_in_banner input[type=submit]
+{
+	margin: -4px 0px 0px 8px;
+	padding: 0px;
+}
+
+#ecd_opt_in_banner p
+{
+	
+}
+
+#ecd-cookie-table
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+#ecd-cookie-table th
+{
+	text-align: left;
+}
+
+#ecd-cookie-table th,
+#ecd-cookie-table td
+{
+	padding: 10px;
+	font-size: 15px;
+}

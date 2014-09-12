@@ -1,0 +1,224 @@
+/* CSS Document */
+
+/* base.css | v0.1 (10172009) | Thierry Koblentz
+ *
+ * The purpose of this styles sheet is to set default styles for common browsers and address common issues (missing scrollbar, extended buttons in IE, gap below images, etc.)
+ */
+
+/* using height:100% on html and body allows to style containers with a 100% height
+ * the overflow declaration is to make sure there is a gutter for the scollbar in all browsers regardless of content
+ * note that there is no font-size declaration set in this rule. If you wish to include one, you should use font-size: 100.01% to prevent bugs in IE and Opera
+ */
+html {
+  overflow-y: scroll;
+  font-size:13px;
+  overflow-x:hidden;
+  margin:0px;
+  padding:0px;
+}
+/* not all browsers set white as the default background color 
+ * color is set to create not too much contrast with the background color
+ * line-height is to ensure that text is legible enough (that there is enough space between the upper and lower line) 
+ */	
+body {
+  background: #FFF;
+  color: #444;
+font-family:"Segoe UI",Calibri,"Myriad Pro",Myriad,"Trebuchet MS",Helvetica,Arial,sans-serif;  font-stretch:narrower;
+font-size:13px;
+}
+
+#footer{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:#222;
+  padding:10px;
+  color:#CCCCCC;
+  opacity: 0.9;
+  -moz-opacity: 0.9;
+  filter: alpha(opacity=90);
+  border-top:1px solid #111;
+  margin-left:-10px;
+}
+
+#footer a{ color:#FFFFFF; text-decoration:none}
+
+textarea{ font:12px Arial, Helvetica, sans-serif}
+
+/* this choice of font-family is supposed to render text the same across platforms
+ * letter-spacing makes the font a bit more legible
+ */
+
+a:link {color: #000; text-decoration:none;}
+a:visited {text-decoration: none; color:#000;}
+a:hover {text-decoration: underline;}
+
+
+/* this is to prevent border from showing around fieldsets and images (i.e., images inside anchors)
+ */
+fieldset, img {
+  border: 0;
+}
+
+/* to prevent a gap from showing below images in some browsers 
+ */
+img {vertical-align: middle;}
+
+/* we use margin for hr for the same reason we do for table 
+ */
+hr {
+  margin-right: 30px;
+  border-style: inset;
+  border-width: 1px;
+}
+
+/* top margin solution */
+/* this is my approach to create white space between elements, you do not have to adhere to it
+ * rather than stylling these elements with top and bottom margin, or simply bottom margin I only use top margin
+ */
+h1, h2, h3, h4, h5, h6, p, pre, dt, li, hr, legend, input, button, textarea, select, address, table {margin-top: 0;}
+
+/* classes
+ * to style elements with the default padding and margin we set on headings, paragraphs, lists, etc.
+ * for example, this class could be used on a DIV inside a blockquote or a DIV inside a FORM, etc.
+ */
+.block {
+  padding: 0 30px;
+  margin-top: 1.2em;
+}
+
+.left{ float:left; }
+.right{ float:right; }
+.clear{ clear:both; }
+
+
+#wrapper{ 
+	width:950px; 
+	text-align:left;
+	border:1px solid #DDD;
+	}
+#header{ 
+	padding-bottom:10px; 
+	padding-top:0px; 
+	width:930px; 
+	background:#FFF; 
+	padding-left:10px; 
+	padding-right:10px; 
+	margin-top:-10px; 
+	border-left:1px solid #DDD;
+	border-right:1px solid #DDD;
+	}
+#content{ 
+	width:950px;
+	background:white;
+	text-align:left; 
+	padding-left:0px;
+	padding-right:0px;
+	}
+
+#navigation{
+	position:relative;
+	display:block;
+	height:33px;
+	font-size:14px; 
+	background:#FFF; 
+	border-top:1px solid #DDD;
+	border-left:1px solid #DDD;
+	border-right:1px solid #DDD;
+	border-bottom:1px solid #DDD;
+
+	width:950px;
+
+	}
+#navigation ul{margin:0; padding:0;width:950px;}
+#navigation ul li{display:block;margin:0;text-align:center;width:118px;display:inline;}
+#navigation ul li a{display:block;margin:0;text-align:center;width:118px;display:inline;float:left;color:#464646; padtext-decoration:none;padding:6px 0px 0 0px;height:27px;}
+#navigation ul li a:hover{display:block;margin:0;text-align:center;width:118px;display:inline;color:#f0f0f0; text-decoration:none; background:#666}
+#navigation ul li a.current{display:block;margin:0;text-align:center;width:118px;display:inline;color:#FFF; font-weight:bold; background:#666;width:118px;}
+
+.btn1{ 
+	border:1px solid #999; 
+	color:#333; 
+	padding:5px; 
+	padding-left:10px; 
+	padding-right:10px; 
+	cursor:pointer; 
+	background:#f0f0f0; 
+	-moz-border-radius:3px; 
+	font-size:12px; 
+	text-shadow: #f0f0f0 1px 1px; 
+	font-family:Arial; 
+	}
+.btn1:hover{ border:1px solid #666; color:#000}
+.btn2{ width:33%; padding:5px; margin-top:10px; font-weight:bold; cursor:pointer; color:#006699}
+
+.btn_more{ 
+	width:100%; 
+	padding:5px; 
+	margin-top:10px; 
+	font-weight:bold; 
+	cursor:pointer; 
+	color:#669999; 
+	background:url(/images/bg_btn1.gif) repeat-x;  
+	border:1px solid #c9c9c9;
+	-moz-border-radius:3px; 
+	}
+.btn_more:hover{ border:1px solid #999;  color:#006699;}
+
+#module{ padding:1px; background:#FFF; border:1px solid #ccc; margin-bottom:20px; }
+#module p{ padding:5px; margin-bottom:0px; }
+#module .content{ background:#FFF; padding:15px; }
+#module input{ padding:2px; border:1px solid #CCCCCC; }
+#module textarea{ padding:2px; border:1px solid #CCCCCC; width:99% }
+#module .msg{ padding:3px; background:#FFFFCC; border:1px solid #FFCC99; color:#333333; margin-bottom:10px; padding-left:10px; -moz-border-radius:3px;}
+#module .btn1{ border:1px solid #CCC; color:#464646; padding:5px; padding-left:10px; padding-right:10px; cursor:pointer; background:#FFF; -moz-border-radius:3px; font-size:12px;}
+#module .btn1:hover{ border:1px solid #CCC
+.msg{ padding:3px; background:#FFFFCC; border:1px solid #DDD; color:#333333; margin-bottom:10px; padding-left:10px; -moz-border-radius:3px;}
+
+#cartera table tr td{ border-bottom:1px solid #CCCCCC; padding:5px; }
+
+tr.grey{ background:#E4F1F1;}
+
+.unseen{ padding:5px; border-bottom:1px solid #FFCC99; border-top:1px solid #FFCC99; background:#FFFFCC; cursor:pointer; margin-top:5px; margin-bottom:5px;}
+.unseen:hover{ background:#FFCC99;}
+
+.wall_date{ font-size:11px; color:#666666; }
+
+#separador{ border-bottom:1px solid #006699; background:#6699CC; height:2px; margin-top:10px; margin-bottom:10px;}
+.avatar{ padding:1px; border:1px solid #CCCCCC;}
+.avatar:hover{ padding:1px; background:#F8BE94; border:1px solid #F8BE94; cursor:pointer;}
+
+
+.button, .button:visited { /* botones gen�ricos */
+	padding:5px;
+	cursor:pointer;
+	font-weight:bold;
+	color:#333333;
+	-moz-border-radius: 3px;
+	-webkit-border-radius:3px;
+	padding:5px;
+	padding-left:15px;
+	padding-right:15px;	
+}
+.button:hover { /* el efecto hover */
+  color: #000;
+}
+.button:active{  /* el efecto click */
+  top: 1px;
+}
+
+ /* botones peque�os */
+.small.button, .small.button:visited {
+  font-size: 13px ;
+  font-family:"Tahoma";
+}
+
+.orange.button, .orange.button:visited { background-color: #eee; font-weight:bold; 	border:1px solid #ccc; }
+.orange.button:hover{ background-color: #facf9c; }
+
+.module_break{ border-bottom:1px solid #FFF; padding-bottom:5px; margin-bottom:5px; }
+
+.error_form{ background:#666666; color:#fff; font-weight:bold; font-size:12px; padding:5px; -webkit-border-radius:2px; -moz-border-radius: 2px;}
+
+#registro .input{ padding:8px; font-size:16px; font-weight:bold; width:250px; border:1px solid #464646; -webkit-border-radius:2px; -moz-border-radius: 2px; margin-bottom:5px;}
+#registro .btn{ padding:10px; font-size:16px; border:1px solid #464646; margin-top:10px; cursor:pointer; -webkit-border-radius:2px; -moz-border-radius: 2px; margin-bottom:5px;}

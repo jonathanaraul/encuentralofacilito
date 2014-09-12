@@ -1,0 +1,25 @@
+<tr id="fila_{{element.bookieId}}">
+	<td >{{element.bookieId}}</td>
+  <td >{{element.trackId}}</td>
+
+  <td>
+   {%if element.active%}
+   <span class="label label-info arrowed arrowed-righ">Si</span>
+   {%else%}
+   <span class="label label-inverse arrowed-in">No</span>
+   {%endif%}
+ </td>
+  <td  class="hidden-phone">{{element.order}}</td>
+  <td  class="hidden-phone">{{element.bono}}</td>
+
+  <td class="hidden-phone" >{%if element.url != ''%}<a href="{{element.url}}" target="_blank">{{element.url[:50] ~ '...'}}</a>{%endif%}</td>
+
+  <td class="hidden-phone">
+   {%if element.noDeposit%}
+   <span class="label label-info arrowed arrowed-righ">Si</span>
+   {%else%}
+   <span class="label label-inverse arrowed-in">No</span>
+   {%endif%}
+ </td>
+
+</tr>

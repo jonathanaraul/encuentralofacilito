@@ -1,0 +1,203 @@
+{% extends '::base.html.twig' %}
+
+{% block pagesScriptsBottom %}
+{%endblock%}
+
+{% block pageContent  %}
+<div class="main-container container-fluid" id="sinlogin">
+	<a class="menu-toggler" id="menu-toggler" href="#"> <span class="menu-text"></span> </a>
+
+	{% include '::sidebar.html.twig'  with {'clase': 'gris'}  %}
+
+	<div class="main-content">
+
+		{# include 'ProjectBackBundle:Architecture:breadcrumb.html.twig'  with {'clase': 'gris'} #}
+		<div class="page-content">
+			{% include 'ProjectBackBundle:'~nombreClase~':page-header.html.twig' with {'subtitulo':'listado'} %}
+
+			<div class="row-fluid">
+				<div class="span12">
+					<!--PAGE CONTENT BEGINS-->
+					<!--PAGE CONTENT BEGINS-->
+					<div class="row-fluid">
+						<div class="span12">
+							<div class="tabbable">
+								<ul class="nav nav-tabs" id="myTab">
+									<li class="active">
+										<a data-toggle="tab" href="#home">Pendiente de redacción 
+											<span class="badge badge-important">{{ pagination0.getTotalItemCount }}</span> 
+										</a>
+									</li>
+
+									<li>
+										<a data-toggle="tab" href="#profile"> Pendiente de publicación <span class="badge badge-important">{{ pagination1.getTotalItemCount }}</span> </a>
+									</li>
+
+									<li>
+										<a data-toggle="tab" href="#prueba"> Publicada <span class="badge badge-important">{{ pagination2.getTotalItemCount }}</span> </a>
+									</li>
+
+								</ul>
+
+								<div class="tab-content">
+									<div id="home" class="tab-pane in active">
+										{%if pagination0.getTotalItemCount>0%}
+					<div class="row-fluid">
+						<div class="span12">
+
+							<table id="sample-table-1" class="table table-striped table-bordered table-hover">
+								<thead>
+									<tr>
+										<th>{{ knp_pagination_sortable(pagination0, 'Id', 'o.id') }}</th>
+										<th>{{ knp_pagination_sortable(pagination0, 'Nombre', 'o.nombre') }}</th>
+										<th>{{ knp_pagination_sortable(pagination0, 'Evento', 'o.evento') }}</th>
+										<th>{{ knp_pagination_sortable(pagination0, 'Fecha', 'o.fecha') }}</th>
+										<th class="hidden-phone">{{ knp_pagination_sortable(pagination0, 'Pronostico', 'o.pronostico') }}</th>
+										<th class="hidden-phone">{{ knp_pagination_sortable(pagination0, 'Cuota', 'o.pronostico') }}</th>		
+										<th class="hidden-phone">{{ knp_pagination_sortable(pagination0, 'Skate', 'o.skate') }}</th>	
+										<th class="hidden-phone">{{ knp_pagination_sortable(pagination0, 'Casa de apuesta', 'o.casaApuestas') }}</th>			
+										<th class="hidden-phone" style="width: 136px;"><i class="icon-time bigger-110 hidden-phone"></i> {{ knp_pagination_sortable(pagination0, 'Creado', 'o.Created') }} </th>
+
+										<th class="hidden-phone" style="width: 136px;"><i class="icon-time bigger-110 hidden-phone"></i> {{ knp_pagination_sortable(pagination0, 'Actualizado', 'o.Updated') }} </th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									{%for element in pagination0 %}
+									{% include 'ProjectBackBundle:'~nombreClase~':list-element.html.twig'  with {'element':element}  %}
+									{%endfor%}
+								</tbody>
+							</table>
+							<div class="row-fluid">
+								<div class="span6">
+									<div class="dataTables_info" id="sample-table-2_info">
+										{{ pagination0.getTotalItemCount }} Resultados
+									</div>
+								</div>
+								<div class="span6">
+									<div class="dataTables_paginate paging_bootstrap pagination" style="margin: 0px;font-size: 18px;">
+										{{ knp_pagination_render(pagination0) }}
+									</div>
+								</div>
+							</div>
+
+						</div><!--/span-->
+					</div><!--/row-->
+					<div class="hr hr-18 dotted hr-double"></div>
+					{%else%}
+					{% include 'ProjectBackBundle:Helpers:busqueda-fallida.html.twig' %}
+					{%endif%}
+									</div>
+
+									<div id="profile" class="tab-pane">
+										{%if pagination1.getTotalItemCount>0%}
+					<div class="row-fluid">
+						<div class="span12">
+
+							<table id="sample-table-1" class="table table-striped table-bordered table-hover">
+								<thead>
+									<tr>
+										<th>{{ knp_pagination_sortable(pagination1, 'Id', 'o.id') }}</th>
+										<th>{{ knp_pagination_sortable(pagination1, 'Nombre', 'o.nombre') }}</th>
+										<th>{{ knp_pagination_sortable(pagination1, 'Evento', 'o.evento') }}</th>
+										<th>{{ knp_pagination_sortable(pagination1, 'Fecha', 'o.fecha') }}</th>
+										<th class="hidden-phone">{{ knp_pagination_sortable(pagination1, 'Pronostico', 'o.pronostico') }}</th>
+										<th class="hidden-phone">{{ knp_pagination_sortable(pagination1, 'Cuota', 'o.pronostico') }}</th>		
+										<th class="hidden-phone">{{ knp_pagination_sortable(pagination1, 'Skate', 'o.skate') }}</th>	
+										<th class="hidden-phone">{{ knp_pagination_sortable(pagination0, 'Casa de apuesta', 'o.casaApuestas') }}</th>		
+										<th class="hidden-phone" style="width: 136px;"><i class="icon-time bigger-110 hidden-phone"></i> {{ knp_pagination_sortable(pagination1, 'Creado', 'o.Created') }} </th>
+
+										<th class="hidden-phone" style="width: 136px;"><i class="icon-time bigger-110 hidden-phone"></i> {{ knp_pagination_sortable(pagination1, 'Actualizado', 'o.Updated') }} </th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									{%for element in pagination1 %}
+									{% include 'ProjectBackBundle:'~nombreClase~':list-element.html.twig'  with {'element':element}  %}
+									{%endfor%}
+								</tbody>
+							</table>
+							<div class="row-fluid">
+								<div class="span6">
+									<div class="dataTables_info" id="sample-table-2_info">
+										{{ pagination1.getTotalItemCount }} Resultados
+									</div>
+								</div>
+								<div class="span6">
+									<div class="dataTables_paginate paging_bootstrap pagination" style="margin: 0px;font-size: 18px;">
+										{{ knp_pagination_render(pagination1) }}
+									</div>
+								</div>
+							</div>
+
+						</div><!--/span-->
+					</div><!--/row-->
+					<div class="hr hr-18 dotted hr-double"></div>
+					{%else%}
+					{% include 'ProjectBackBundle:Helpers:busqueda-fallida.html.twig' %}
+					{%endif%}
+									</div>
+
+									<div id="prueba" class="tab-pane">
+										{%if pagination2.getTotalItemCount>0%}
+					<div class="row-fluid">
+						<div class="span12">
+
+							<table id="sample-table-1" class="table table-striped table-bordered table-hover">
+								<thead>
+									<tr>
+										<th>{{ knp_pagination_sortable(pagination2, 'Id', 'o.id') }}</th>
+										<th>{{ knp_pagination_sortable(pagination2, 'Nombre', 'o.nombre') }}</th>
+										<th>{{ knp_pagination_sortable(pagination2, 'Evento', 'o.evento') }}</th>
+										<th>{{ knp_pagination_sortable(pagination2, 'Fecha', 'o.fecha') }}</th>
+										<th class="hidden-phone">{{ knp_pagination_sortable(pagination2, 'Pronostico', 'o.pronostico') }}</th>
+										<th class="hidden-phone">{{ knp_pagination_sortable(pagination2, 'Cuota', 'o.pronostico') }}</th>		
+										<th class="hidden-phone">{{ knp_pagination_sortable(pagination2, 'Skate', 'o.skate') }}</th>	
+										<th class="hidden-phone">{{ knp_pagination_sortable(pagination0, 'Casa de apuesta', 'o.casaApuestas') }}</th>				
+										<th class="hidden-phone" style="width: 136px;"><i class="icon-time bigger-110 hidden-phone"></i> {{ knp_pagination_sortable(pagination2, 'Creado', 'o.Created') }} </th>
+
+										<th class="hidden-phone" style="width: 136px;"><i class="icon-time bigger-110 hidden-phone"></i> {{ knp_pagination_sortable(pagination2, 'Actualizado', 'o.Updated') }} </th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									{%for element in pagination2 %}
+									{% include 'ProjectBackBundle:'~nombreClase~':list-element.html.twig'  with {'element':element}  %}
+									{%endfor%}
+								</tbody>
+							</table>
+							<div class="row-fluid">
+								<div class="span6">
+									<div class="dataTables_info" id="sample-table-2_info">
+										{{ pagination2.getTotalItemCount }} Resultados
+									</div>
+								</div>
+								<div class="span6">
+									<div class="dataTables_paginate paging_bootstrap pagination" style="margin: 0px;font-size: 18px;">
+										{{ knp_pagination_render(pagination2) }}
+									</div>
+								</div>
+							</div>
+
+						</div><!--/span-->
+					</div><!--/row-->
+					<div class="hr hr-18 dotted hr-double"></div>
+					{%else%}
+					{% include 'ProjectBackBundle:Helpers:busqueda-fallida.html.twig' %}
+					{%endif%}
+									</div>
+
+								</div>
+							</div>
+						</div><!--/span-->
+
+					</div><!--/row-->
+
+					<!--PAGE CONTENT ENDS-->
+				</div><!--/.span-->
+			</div><!--/.row-fluid-->
+		</div><!--/.page-content-->
+	</div><!--/.main-content-->
+</div><!--/.main-container-->
+
+{%endblock%}

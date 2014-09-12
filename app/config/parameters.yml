@@ -1,0 +1,142 @@
+# This file is auto-generated during the composer install
+parameters:
+
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: null
+    database_name: tnapuestas
+    database_user: root
+    database_password: null
+
+    database_driver2: pdo_mysql
+    database_host2: localhost
+    database_port2: null
+    database_name2: milcasinos
+    database_user2: milcasinos
+    database_password2: pirracas
+
+    database_driver3: pdo_mysql
+    database_host3: localhost
+    database_port3: null
+    database_name3: foro-apuestas
+    database_user3: root
+    database_password3: null
+
+    database_driver4: pdo_mysql
+    database_host4: localhost
+    database_port4: null
+    database_name4: pronoapuestas
+    database_user4: pronoapuestas
+    database_password4: pirracas
+
+    database_driver5: pdo_mysql
+    database_host5: localhost
+    database_port5: null
+    database_name5: apuestasmotos
+    database_user5: apuestasmotos
+    database_password5: pirracas
+
+    database_driver6: pdo_mysql
+    database_host6: localhost
+    database_port6: null
+    database_name6: apgoles
+    database_user6: apgoles
+    database_password6: pirracas
+
+    database_driver7: pdo_mysql
+    database_host7: localhost
+    database_port7: null
+    database_name7: apuestaseurocopa
+    database_user7: apuestaseurocopa
+    database_password7: pirracas
+
+    database_driver8: pdo_mysql
+    database_host8: localhost
+    database_port8: null
+    database_name8: apuestasformula1
+    database_user8: apuestasformula1
+    database_password8: pirracas
+
+    database_driver9: pdo_mysql
+    database_host9: localhost
+    database_port9: null
+    database_name9: caballos
+    database_user9: caballos
+    database_password9: pirracas
+
+    database_driver10: pdo_mysql
+    database_host10: localhost
+    database_port10: null
+    database_name10: apuestas_cartas
+    database_user10: apuestas_cartas
+    database_password10: pirracas
+
+    database_driver11: pdo_mysql
+    database_host11: localhost
+    database_port11: null
+    database_name11: apuestascasino
+    database_user11: apuestascasino
+    database_password11: pirracas
+
+    database_driver12: pdo_mysql
+    database_host12: localhost
+    database_port12: null
+    database_name12: apuestasmundial
+    database_user12: apuestasmundial
+    database_password12: pirracas
+
+    database_driver13: pdo_mysql
+    database_host13: localhost
+    database_port13: null
+    database_name13: apuestaspremier
+    database_user13: apuestaspremier
+    database_password13: pirracas
+
+    database_driver14: pdo_mysql
+    database_host14: localhost
+    database_port14: null
+    database_name14: blackjack
+    database_user14: blackjack
+    database_password14: pirracas
+
+    database_driver15: pdo_mysql
+    database_host15: localhost
+    database_port15: null
+    database_name15: blogdebingo
+    database_user15: blogdebingo
+    database_password15: pirracas
+
+    database_driver16: pdo_mysql
+    database_host16: localhost
+    database_port16: null
+    database_name16: casinoapuestas 
+    database_user16: casinoapuestas 
+    database_password16: pirracas
+
+    database_driver17: pdo_mysql
+    database_host17: localhost
+    database_port17: null
+    database_name17: casinoyruleta
+    database_user17: casinoyruleta
+    database_password17: pirracas
+
+    database_driver18: pdo_mysql
+    database_host18: localhost
+    database_port18: null
+    database_name18: pokermaestros
+    database_user18: pokermaestros
+    database_password18: 830828&&m 
+
+    database_driver19: pdo_mysql
+    database_host19: localhost
+    database_port19: null
+    database_name19: reddeapuestas
+    database_user19: reddeapuestas
+    database_password19: pirracas
+
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    locale: es
+    secret: ThisTokenIsNotSoSecretChangeIt

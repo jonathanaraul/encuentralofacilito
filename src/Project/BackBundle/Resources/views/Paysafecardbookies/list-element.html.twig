@@ -1,0 +1,50 @@
+		<tr  id="fila_{{element.id}}">
+			<td  style="width: 50px;">{{ element.id }}</td>
+			<td >{{ element.nombre }}</td>
+			<td >{{ element.email }}</td>
+			<td   class="hidden-phone" style="width: 120px;">{%if element.created is not null%}{{ element.created.format('d/m/Y') }}{%else%}-{%endif%}</td>
+			<td  class="hidden-phone">{{ element.ip }}</td>
+
+			<td >
+			<ul>
+				{%for element in element.bookies%}
+				<li>
+					<div>
+						<div style="float:left:width:50%;">
+							{{ element.nombre }}
+						</div>
+						<div style="float:left:width:45%;">
+
+							<input type="text" class="nickcasatabla" paysafecardbookies="{{element.id}}" bookies="{{element.id}}" 
+                            {%if values[element.id][element.id] is defined%}value="{{values[element.id][element.id]}}"{%endif%}
+
+                             >
+
+						</div>
+					</div>
+				</li>
+				{%endfor%}
+			</ul>
+		</td>
+			<td>
+				<div class="hidden-phone visible-desktop btn-group" tipo="Paysafecardbookies" objeto="{{element.id}}" >
+
+					<button class="btn btn-mini btn-info" onclick="document.location.href = '{{path('project_back_registro_casas_apuestas_edit',{'id':element.id})}}'">
+						<i class="icon-pencil bigger-120"></i>
+					</button>
+				</div>
+				<div class="hidden-desktop visible-phone">
+					<div class="inline position-relative">
+						<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-cog icon-only bigger-110"></i>
+						</button>
+						<ul class="dropdown-menu dropdown-icon-only dropdown-yellow pull-right dropdown-caret dropdown-close" tipo="Paysafecard" objeto="{{element.id}}" >
+
+							<li onclick="document.location.href = '{{path('project_back_registro_casas_apuestas_edit',{'id':element.id})}}'">
+								<a href="javascript:void(0)" class="tooltip-success editar" data-rel="tooltip" title="Edit" objeto="{{element.id}}"> <span class="green"> <i class="icon-pencil bigger-120"></i> </span> </a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</td>
+		</tr>

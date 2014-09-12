@@ -1,0 +1,206 @@
+parameters:
+#    project_user.example.class: Project\UserBundle\Example
+
+services:
+#    project_user.example:
+#        class: %project_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    project.registration.form.type:
+        class: Project\UserBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags: [{ name: "form.type", alias: "project_user_registration" }]
+
+    project.invitation.form.type:
+        class: Project\UserBundle\Form\Type\InvitationFormType
+        arguments: [@project.invitation.form.data_transformer]
+        tags: [{ name: "form.type", alias: "project_invitation_type" }]
+
+    project.invitation.form.data_transformer:
+        class: Project\UserBundle\Form\DataTransformer\InvitationToCodeTransformer
+        arguments: [@doctrine.orm.entity_manager]
+
+    project.profile.form.type:
+        class: Project\UserBundle\Form\Type\ProfileFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: project_user_profile }
+
+    project_user.form.fuente:
+        class: Project\UserBundle\Form\FuenteType
+        tags:
+            - { name: form.type, alias: fuente }
+
+    project_user.form.fuente_categoria:
+        class: Project\UserBundle\Form\FuenteCategoriaType
+        tags:
+            - { name: form.type, alias: fuente_categoria }
+
+    project_user.form.fuente_tipo:
+        class: Project\UserBundle\Form\FuenteTipoType
+        tags:
+            - { name: form.type, alias: fuente_tipo }
+
+    project_user.form.imagen:
+        class: Project\UserBundle\Form\ImagenType
+        tags:
+            - { name: form.type, alias: imagen }
+
+    project_user.form.articulo:
+        class: Project\UserBundle\Form\ArticuloType
+        tags:
+            - { name: form.type, alias: articulo }
+
+    project_user.form.error:
+        class: Project\UserBundle\Form\ErrorType
+        tags:
+            - { name: form.type, alias: error }
+
+    project_user.form.noticia:
+        class: Project\UserBundle\Form\NoticiaType
+        tags:
+            - { name: form.type, alias: noticia }
+
+    project_user.form.pronostico:
+        class: Project\UserBundle\Form\PronosticoType
+        tags:
+            - { name: form.type, alias: pronostico }
+
+    project_user.form.paysafecard:
+        class: Project\UserBundle\Form\PaysafecardType
+        tags:
+            - { name: form.type, alias: paysafecard }
+
+    project_user.form.paysafecardextended:
+        class: Project\UserBundle\Form\PaysafecardExtendedType
+        tags:
+            - { name: form.type, alias: paysafecardextended }
+
+    project_user.form.paysafecardbookies:
+        class: Project\UserBundle\Form\PaySafecardBookiesType
+        tags:
+            - { name: form.type, alias: paysafecardbookies }
+
+    project_user.form.type.paysafecardbookiesextended:
+        class: Project\UserBundle\Form\PaysafecardBookiesExtendedType
+        tags:
+            - { name: form.type, alias: paysafecardbookiesextended }
+
+    project_user.form.acceso:
+        class: Project\UserBundle\Form\AccesoType
+        tags:
+            - { name: form.type, alias: acceso }
+
+
+
+    project_user.form.filtros.listado:
+        class: Project\UserBundle\Form\Filtros\ListadoType
+        tags:
+            - { name: form.type, alias: listado_filtro }
+    project_user.form.filtros.bookies:
+        class: Project\UserBundle\Form\Filtros\BookiesType
+        tags:
+            - { name: form.type, alias: bookies_filtro }
+    project_user.form.bookies:
+        class: Project\UserBundle\Form\BookiesType
+        tags:
+            - { name: form.type, alias: bookies }
+    project_user.form.filtros.blocks_bookies:
+        class: Project\UserBundle\Form\Filtros\BlocksBookiesType
+        tags:
+            - { name: form.type, alias: blocks_bookies_filtro }
+    project_user.form.blocks_bookies:
+        class: Project\UserBundle\Form\BlocksBookiesType
+        tags:
+            - { name: form.type, alias: blocks_bookies }
+
+
+    project_user.form.filtros.help_steps_bookie:
+        class: Project\UserBundle\Form\Filtros\HelpStepsBookieType
+        tags:
+            - { name: form.type, alias: help_steps_bookie_filtro }
+    project_user.form.help_steps_bookie:
+        class: Project\UserBundle\Form\HelpStepsBookieType
+        tags:
+            - { name: form.type, alias: help_steps_bookie }
+
+
+    project_user.form.filtros.payment_methods:
+        class: Project\UserBundle\Form\Filtros\PaymentMethodsType
+        tags:
+            - { name: form.type, alias: payment_methods_filtro }
+    project_user.form.payment_methods:
+        class: Project\UserBundle\Form\PaymentMethodsType
+        tags:
+            - { name: form.type, alias: payment_methods }
+
+    project_user.form.filtros.account_bookie:
+        class: Project\UserBundle\Form\Filtros\AccountBookieType
+        tags:
+            - { name: form.type, alias: account_bookie_filtro }
+    project_user.form.account_bookie:
+        class: Project\UserBundle\Form\AccountBookieType
+        tags:
+            - { name: form.type, alias: account_bookie }
+
+    project_user.form.filtros.tracking_site:
+        class: Project\UserBundle\Form\Filtros\TrackingSiteType
+        tags:
+            - { name: form.type, alias: tracking_site_filtro }
+    project_user.form.tracking_site:
+        class: Project\UserBundle\Form\TrackingSiteType
+        tags:
+            - { name: form.type, alias: tracking_site }
+
+    project_user.form.filtros.tracked_webs:
+        class: Project\UserBundle\Form\Filtros\TrackedWebsType
+        tags:
+            - { name: form.type, alias: tracked_webs_filtro }
+    project_user.form.tracked_webs:
+        class: Project\UserBundle\Form\TrackedWebsType
+        tags:
+            - { name: form.type, alias: tracked_webs }
+
+    project_user.form.filtros.picks:
+        class: Project\UserBundle\Form\Filtros\PicksType
+        tags:
+            - { name: form.type, alias: picks_filtro }
+    project_user.form.picks:
+        class: Project\UserBundle\Form\PicksType
+        tags:
+            - { name: form.type, alias: picks }
+
+    project_user.form.filtros.links_blogs:
+        class: Project\UserBundle\Form\Filtros\LinksBlogsType
+        tags:
+            - { name: form.type, alias: links_blogs_filtro }
+    project_user.form.links_blogs:
+        class: Project\UserBundle\Form\LinksBlogsType
+        tags:
+            - { name: form.type, alias: links_blogs }
+
+    project_user.form.filtros.competicion:
+        class: Project\UserBundle\Form\Filtros\CompeticionType
+        tags:
+            - { name: form.type, alias: competicion_filtro }
+    project_user.form.competicion:
+        class: Project\UserBundle\Form\CompeticionType
+        tags:
+            - { name: form.type, alias: competicion }
+
+    project_user.form.filtros.deporte:
+        class: Project\UserBundle\Form\Filtros\DeporteType
+        tags:
+            - { name: form.type, alias: deporte_filtro }
+    project_user.form.deporte:
+        class: Project\UserBundle\Form\DeporteType
+        tags:
+            - { name: form.type, alias: deporte }
+
+
+
+    my.listener:
+        class: Project\UserBundle\EventListener\EnviadorCorreos
+        arguments: [ '@service_container']
+        tags:
+            - { name: doctrine.event_listener, event: postPersist, method: postPersist   }
+            - { name: doctrine.event_listener, event: postUpdate , method: postUpdate    }

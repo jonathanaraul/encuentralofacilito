@@ -1,0 +1,39 @@
+{%for object in cuerpo%}
+<tr>
+
+			
+  {%if object.cuota_jugada is not defined or object.cuota_jugada is null %}
+   {%set cuota = object.cuota %}
+  {%else %}
+   {%set cuota = object.cuota_jugada %}
+  {%endif%}    
+
+  <td >{{object.evento}}</td>
+  <td >{{object.pronostico}}</td>
+  <td>
+    {%if object.acierto ==0%}
+    No
+    {%elseif object.acierto ==1%}
+    Si
+    {%elseif object.acierto ==2%}
+    Nulo
+    {%elseif object.acierto ==-1%}
+    Pdte
+    {%endif%}
+  </td>
+  <td>{{object.puntos_jugados}}</td>
+  <td>{{cuota}}</td>
+  <td>{{object.realizado_en}}</td>
+  <td>
+  {%if object.acierto ==0 or object.acierto == -1%}
+   {%set puntosUsuario = puntosUsuario - object.puntos_jugados %}
+  {%endif%}
+  {%if object.acierto ==1 %}
+   {%set puntosUsuario = puntosUsuario + ((object.puntos_jugados*cuota) - object.puntos_jugados)  %}
+  {%endif%}
+  {{puntosUsuario}}
+  </td>
+
+
+</tr>
+{%endfor%}

@@ -1,0 +1,18 @@
+{% extends "ProjectFrontBundle:Helpers:base.html.twig" %}
+{% form_theme form 'ProjectFrontBundle:Form:fields.html.twig' %}
+
+{%block content%}
+<h1>Registro en casas de apuestas</h1>
+{%if mensaje == false %}
+<div class="formulario" style="height: 249px;width: 949px;">
+	<h3>Selecciona las casas de apuestas en las que todavia no estás registrado (mantén la pulsada la tecla Control para seleccionar varias). Cuando tengamos ofertas interesantes te enviaremos un mail para que te registres.</h3>
+	<h3>Los campos marcados con un * son obligatorios</h3>
+	{{ form(form, {'action': path('project_front_registro_casas_apuestas'), 'method': 'POST','attr': {'style': 'padding: 5px'}}) }}
+</div>
+{%else%}
+<div class="formulario" style="width: 949px;">
+	<h3>Gracias por rellenar el formulario. Cuando tengamos promociones especiales con las casas de apuestas nos pondremos en contacto contigo.</h3>
+	<h3>Recuerda que repartimos mas de 1500€ en premios todos los meses con nuestros concursos: <a href="http://www.foro-apuestas.com/concursos-del-foro/">http://www.foro-apuestas.com/concursos-del-foro/</a></h3>
+</div>
+{%endif%}
+{%endblock%}

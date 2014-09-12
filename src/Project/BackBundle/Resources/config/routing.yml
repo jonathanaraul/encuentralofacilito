@@ -1,0 +1,329 @@
+project_back_homepage:
+    pattern:  /
+    defaults: { _controller: ProjectBackBundle:Default:index }
+project_back_delete:
+    pattern:  /delete
+    defaults: { _controller: ProjectBackBundle:Default:delete }
+    requirements:
+      _method: POST
+    options:
+        expose: true
+project_back_status:
+    pattern:  /status
+    defaults: { _controller: ProjectBackBundle:Default:status }
+    requirements:
+      _method: POST
+    options:
+        expose: true
+
+project_back_parser_parsear_rutinas:
+    pattern:  /parser/rutinas
+    defaults: { _controller: ProjectBackBundle:ParserRutinas:index }
+
+project_back_parser_acceso_list:
+    pattern:  /parser/acceso/list/
+    defaults: { _controller: ProjectBackBundle:ParserAcceso:list }
+project_back_parser_acceso_create:
+    pattern:  /parser/acceso/create
+    defaults: { _controller: ProjectBackBundle:ParserAcceso:create }
+project_back_parser_acceso_edit:
+    pattern:  /parser/acceso/edit/{id}
+    defaults: { _controller: ProjectBackBundle:ParserAcceso:edit, id: '1' }
+
+project_back_parser_fuente_list:
+    pattern:  /parser/fuente/list/
+    defaults: { _controller: ProjectBackBundle:ParserFuente:list }
+project_back_parser_fuente_create:
+    pattern:  /parser/fuente/create
+    defaults: { _controller: ProjectBackBundle:ParserFuente:create }
+project_back_parser_fuente_edit:
+    pattern:  /parser/fuente/edit/{id}
+    defaults: { _controller: ProjectBackBundle:ParserFuente:edit, id: '1' }
+project_back_parser_fuente_rss:
+    pattern:  /parser/fuente/rss/{id}
+    defaults: { _controller: ProjectBackBundle:ParserFuente:rss, id: '1' }
+
+project_back_parser_fuente_categoria_list:
+    pattern:  /parser/fuente/categoria/list/
+    defaults: { _controller: ProjectBackBundle:ParserFuenteCategoria:list }
+project_back_parser_fuente_categoria_create:
+    pattern:  /parser/fuente/categoria/create
+    defaults: { _controller: ProjectBackBundle:ParserFuenteCategoria:create }
+project_back_parser_fuente_categoria_edit:
+    pattern:  /parser/fuente/categoria/edit/{id}
+    defaults: { _controller: ProjectBackBundle:ParserFuenteCategoria:edit, id: '1' }
+
+project_back_parser_fuente_tipo_list:
+    pattern:  /parser/fuente/tipo/list/
+    defaults: { _controller: ProjectBackBundle:ParserFuenteTipo:list }
+project_back_parser_fuente_tipo_create:
+    pattern:  /parser/fuente/tipo/create
+    defaults: { _controller: ProjectBackBundle:ParserFuenteTipo:create }
+project_back_parser_fuente_tipo_edit:
+    pattern:  /parser/fuente/tipo/edit/{id}
+    defaults: { _controller: ProjectBackBundle:ParserFuenteTipo:edit, id: '1' }
+
+project_back_parser_imagen_list:
+    pattern:  /parser/imagen/list/
+    defaults: { _controller: ProjectBackBundle:ParserImagen:list }
+project_back_parser_imagen_create:
+    pattern:  /parser/imagen/create
+    defaults: { _controller: ProjectBackBundle:ParserImagen:create }
+project_back_parser_imagen_edit:
+    pattern:  /parser/imagen/edit/{id}
+    defaults: { _controller: ProjectBackBundle:ParserImagen:edit, id: '1' }
+
+project_back_parser_noticia_list:
+    pattern:  /parser/noticia/list/
+    defaults: { _controller: ProjectBackBundle:ParserNoticia:list }
+    options:
+        expose: true
+project_back_parser_noticia_create:
+    pattern:  /parser/noticia/create
+    defaults: { _controller: ProjectBackBundle:ParserNoticia:create }
+project_back_parser_noticia_edit:
+    pattern:  /parser/noticia/edit/{id}
+    defaults: { _controller: ProjectBackBundle:ParserNoticia:edit, id: '1' }
+project_back_parser_noticia_imagen_tags:
+    pattern:  /parser/noticia/imagen/tag
+    defaults: { _controller: ProjectBackBundle:ParserNoticia:imagenTags}
+    requirements:
+      _method: POST
+    options:
+        expose: true
+project_back_parser_noticia_borrar_pendientes:
+    pattern:  /parser/noticia/borrar/pendientes
+    defaults: { _controller: ProjectBackBundle:ParserNoticia:borrarPendientes}
+    requirements:
+      _method: POST
+    options:
+        expose: true
+
+project_back_parser_listados:
+    pattern:  /parser/listados/list/
+    defaults: { _controller: ProjectBackBundle:ParserListados:list }
+
+project_back_parser_pronostico_list:
+    pattern:  /parser/pronostico/list/
+    defaults: { _controller: ProjectBackBundle:ParserPronostico:list }
+project_back_parser_pronostico_create:
+    pattern:  /parser/pronostico/create
+    defaults: { _controller: ProjectBackBundle:ParserPronostico:create }
+project_back_parser_pronostico_edit:
+    pattern:  /parser/pronostico/edit/{id}
+    defaults: { _controller: ProjectBackBundle:ParserPronostico:edit, id: '1' }
+
+project_back_parser_error_list:
+    pattern:  /parser/error/list/
+    defaults: { _controller: ProjectBackBundle:ParserError:list }
+project_back_parser_error_create:
+    pattern:  /parser/error/create
+    defaults: { _controller: ProjectBackBundle:ParserError:create }
+project_back_parser_error_edit:
+    pattern:  /parser/error/edit/{id}
+    defaults: { _controller: ProjectBackBundle:ParserError:edit, id: '1' }
+
+project_back_peticion_pin_paysafecard_list:
+    pattern:  /peticion-pin-paysafecard/list/
+    defaults: { _controller: ProjectBackBundle:PeticionPinSafecard:list }
+project_back_peticion_pin_paysafecard_edit:
+    pattern:  /peticion-pin-paysafecard/edit/{id}
+    defaults: { _controller: ProjectBackBundle:PeticionPinSafecard:edit, id: '1' }
+
+project_back_registro_casas_apuestas_list:
+    pattern:  /registro-casas-apuestas/list/
+    defaults: { _controller: ProjectBackBundle:RegistroCasasApuestas:list }
+project_back_registro_casas_apuestas_edit:
+    pattern:  /registro-casas-apuestas/edit/{id}
+    defaults: { _controller: ProjectBackBundle:RegistroCasasApuestas:edit, id: '1' }
+project_back_registro_casas_savebookiesvalues:
+    pattern:  /registro-casas-apuestas/savebookiesvalues
+    defaults: { _controller: ProjectBackBundle:RegistroCasasApuestas:saveBookiesValues}
+    requirements:
+      _method: POST
+
+project_back_bookies_list:
+    pattern:  /bookies/list/
+    defaults: { _controller: ProjectBackBundle:Bookies:list }
+project_back_bookies_create:
+    pattern:  /bookies/create
+    defaults: { _controller: ProjectBackBundle:Bookies:create }
+project_back_bookies_edit:
+    pattern:  /bookies/edit/{id}
+    defaults: { _controller: ProjectBackBundle:Bookies:edit, id: '1' }
+
+
+project_back_blocks_bookies_list:
+    pattern:  /blocksbookies/list/
+    defaults: { _controller: ProjectBackBundle:BlocksBookies:list }
+project_back_blocks_bookies_create:
+    pattern:  /blocksbookies/create
+    defaults: { _controller: ProjectBackBundle:BlocksBookies:create }
+project_back_blocks_bookies_edit:
+    pattern:  /blocksbookies/edit/{id}
+    defaults: { _controller: ProjectBackBundle:BlocksBookies:edit, id: '1' }
+
+project_back_help_steps_bookie_list:
+    pattern:  /helpstepsbookie/list/
+    defaults: { _controller: ProjectBackBundle:HelpStepsBookie:list }
+project_back_help_steps_bookie_create:
+    pattern:  /helpstepsbookie/create
+    defaults: { _controller: ProjectBackBundle:HelpStepsBookie:create }
+project_back_help_steps_bookie_edit:
+    pattern:  /helpstepsbookie/edit/{id}
+    defaults: { _controller: ProjectBackBundle:HelpStepsBookie:edit, id: '1' }
+
+project_back_payment_methods_list:
+    pattern:  /paymentmethods/list/
+    defaults: { _controller: ProjectBackBundle:PaymentMethods:list }
+project_back_payment_methods_create:
+    pattern:  /paymentmethods/create
+    defaults: { _controller: ProjectBackBundle:PaymentMethods:create }
+project_back_payment_methods_edit:
+    pattern:  /paymentmethods/edit/{id}
+    defaults: { _controller: ProjectBackBundle:PaymentMethods:edit, id: '1' }
+
+project_back_account_bookie_list:
+    pattern:  /accountBookie/list/
+    defaults: { _controller: ProjectBackBundle:AccountBookie:list }
+project_back_account_bookie_create:
+    pattern:  /accountBookie/create
+    defaults: { _controller: ProjectBackBundle:AccountBookie:create }
+project_back_account_bookie_edit:
+    pattern:  /accountBookie/edit/{id}
+    defaults: { _controller: ProjectBackBundle:AccountBookie:edit, id: '1' }
+
+project_back_tracking_site_list:
+    pattern:  /trackingSite/list/
+    defaults: { _controller: ProjectBackBundle:TrackingSite:list }
+project_back_tracking_site_search:
+    pattern:  /trackingSite/search/
+    defaults: { _controller: ProjectBackBundle:TrackingSite:search}
+    requirements:
+      _method: POST
+    options:
+        expose: true
+
+project_back_tracking_site_create:
+    pattern:  /trackingSite/create
+    defaults: { _controller: ProjectBackBundle:TrackingSite:create }
+project_back_tracking_site_edit:
+    pattern:  /trackingSite/edit/{id}
+    defaults: { _controller: ProjectBackBundle:TrackingSite:edit, id: '1' }
+
+project_back_tracked_webs_list:
+    pattern:  /trackedWebs/list/
+    defaults: { _controller: ProjectBackBundle:TrackedWebs:list }
+project_back_tracked_webs_create:
+    pattern:  /trackedWebs/create
+    defaults: { _controller: ProjectBackBundle:TrackedWebs:create }
+project_back_tracked_webs_edit:
+    pattern:  /trackedWebs/edit/{id}
+    defaults: { _controller: ProjectBackBundle:TrackedWebs:edit, id: '1' }
+
+project_back_picks_list:
+    pattern:  /picks/list/
+    defaults: { _controller: ProjectBackBundle:Picks:list }
+project_back_picks_edit:
+    pattern:  /picks/edit/{id}
+    defaults: { _controller: ProjectBackBundle:Picks:edit, id: '1' }
+
+project_back_links_blogs_list:
+    pattern:  /linksblogs/list/
+    defaults: { _controller: ProjectBackBundle:LinksBlogs:list }
+project_back_links_blogs_create:
+    pattern:  /linksblogs/create
+    defaults: { _controller: ProjectBackBundle:LinksBlogs:create }
+project_back_links_blogs_edit:
+    pattern:  /linksblogs/edit/{id}
+    defaults: { _controller: ProjectBackBundle:LinksBlogs:edit, id: '1' }
+
+project_back_votaciones_foro:
+    pattern:  /votacionesForo
+    defaults: { _controller: ProjectBackBundle:VotacionesForo:index }
+project_back_votaciones_foro_recalcular:
+    pattern:  /votacionesForo/recalcular/
+    defaults: { _controller: ProjectBackBundle:VotacionesForo:recalcular}
+    requirements:
+      _method: POST
+    options:
+        expose: true
+project_back_votaciones_foro_eliminar_votos_mes:
+    pattern:  /votacionesForo/eliminarVotosMes/
+    defaults: { _controller: ProjectBackBundle:VotacionesForo:eliminarVotosMes}
+    requirements:
+      _method: POST
+    options:
+        expose: true
+
+project_back_liga_deportiva_puntos_ld:
+    pattern:  /liga-deportiva/puntos-ld
+    defaults: { _controller: ProjectBackBundle:LigaDeportiva:puntosLD }
+project_back_liga_deportiva_puntos_ld_buscar_usuario:
+    pattern:  /liga-deportiva/puntos-ld/buscar-usuario/
+    defaults: { _controller: ProjectBackBundle:LigaDeportiva:buscarUsuario}
+    requirements:
+      _method: POST
+    options:
+        expose: true
+project_back_liga_deportiva_corrector_ld:
+    pattern:  /liga-deportiva/corrector-ld
+    defaults: { _controller: ProjectBackBundle:LigaDeportiva:correctorLD }
+project_back_liga_deportiva_corrector_ld_corregir_evento:
+    pattern:  /liga-deportiva/corrector-ld/corregir-evento
+    defaults: { _controller: ProjectBackBundle:LigaDeportiva:corregirEvento }
+    requirements:
+      _method: POST
+    options:
+        expose: true
+project_back_liga_deportiva_corrector_ld_mes_anterior:
+    pattern:  /liga-deportiva/corrector-ld/mes-anterior
+    defaults: { _controller: ProjectBackBundle:LigaDeportiva:correctorLDMesAnterior }
+    requirements:
+      _method: POST
+    options:
+        expose: true
+project_back_liga_deportiva_corrector_ld_delete:
+    pattern:  /liga-deportiva/corrector-ld/delete
+    defaults: { _controller: ProjectBackBundle:LigaDeportiva:borrarEvento }
+    requirements:
+      _method: POST
+    options:
+        expose: true
+project_back_liga_deportiva_recorrector_ld:
+    pattern:  /liga-deportiva/recorrector-ld
+    defaults: { _controller: ProjectBackBundle:LigaDeportiva:recorrectorLD }
+project_back_liga_deportiva_recorrector_ld_corregir_evento:
+    pattern:  /liga-deportiva/recorrector-ld/recorregir-evento
+    defaults: { _controller: ProjectBackBundle:LigaDeportiva:recorregirEvento }
+    requirements:
+      _method: POST
+    options:
+        expose: true
+project_back_liga_deportiva_recorrector_ld_mes_anterior:
+    pattern:  /liga-deportiva/recorrector-ld/mes-anterior
+    defaults: { _controller: ProjectBackBundle:LigaDeportiva:recorrectorLDMesAnterior }
+    requirements:
+      _method: POST
+    options:
+        expose: true
+
+project_back_maestros_competicion_list:
+    pattern:  /maestros/competicion/list/
+    defaults: { _controller: ProjectBackBundle:Competicion:list }
+project_back_maestros_competicion_create:
+    pattern:  /maestros/competicion/create
+    defaults: { _controller: ProjectBackBundle:Competicion:create }
+project_back_maestros_competicion_edit:
+    pattern:  /maestros/competicion/edit/{id}
+    defaults: { _controller: ProjectBackBundle:Competicion:edit, id: '1' }
+
+project_back_maestros_deporte_list:
+    pattern:  /maestros/deporte/list/
+    defaults: { _controller: ProjectBackBundle:Deporte:list }
+project_back_maestros_deporte_create:
+    pattern:  /maestros/deporte/create
+    defaults: { _controller: ProjectBackBundle:Deporte:create }
+project_back_maestros_deporte_edit:
+    pattern:  /maestros/deporte/edit/{id}
+    defaults: { _controller: ProjectBackBundle:Deporte:edit, id: '1' }

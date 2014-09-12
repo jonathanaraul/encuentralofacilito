@@ -1,0 +1,149 @@
+{% extends "ProjectFrontBundle:Helpers:base.html.twig" %}
+{% form_theme form 'ProjectFrontBundle:Form:fields.html.twig' %}
+
+{%block content%}
+<h1>Petición pin paysafecard</h1>
+{%if mensaje == false %}
+<div class="formulario" style="height: 900px;">
+	<h3>Los campos marcados con un * son obligatorios</h3>
+	{{ form(form, {'action': path('project_front_peticion_pin_paysafecard'), 'method': 'POST','attr': {'style': 'padding: 5px'}}) }}
+
+	<div class="formLabel" style="width: 28%;float: left;">
+		<p><img src="{{asset('front/images/paysafecard-gratis.jpg')}}" style="width: 170px;">
+		</p>
+	</div>
+	<div class="formWidget"  style="width: 70%;float: left;margin-top: 30px;">
+		<h3>Registrate desde los enlaces de todoapuestas en cualquier de las casas de apuestas que te mostramos en esta pagina y podrás obtener 10€ extra con tu primer depósito.</h3>
+	</div>
+
+	{#
+	<p><img src="{{asset('front/images/paysafecard-gratis.jpg')}}" style="width: 170px;">
+	</p>#}
+
+	<div class="row" style="float: left;">
+		<div class="casaapuesta">
+			<a href="http://www.todoapuestas.org/trackingTransform.php?bookieid=35&trackid=1&track_site="><img src="https://www.todoapuestas.org/mundial/imagenes/william.png" style="width: 150px;"></a>
+			<div class="listaDePuntos">
+				<ul>
+					<li>
+						<a href="puesta"> <a href="http://www.todoapuestas.org/trackingTransform.php?bookieid=35&trackid=1&track_site=">Registrate en William Hill</a>
+					</li>
+					<li>
+						Bono de bienvenida de 100€ + 10€ gratis con paysafecard
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="casaapuesta">
+			<a href="http://www.todoapuestas.org/trackingTransform.php?bookieid=64&trackid=1&track_site="><img src="https://www.todoapuestas.org/mundial/imagenes/euro.png" style="width: 150px;"> </a>
+			<div class="listaDePuntos">
+				<ul>
+					<li>
+						<a href="http://www.todoapuestas.org/trackingTransform.php?bookieid=64&trackid=1&track_site=">Registrate en Eurojuego</a>
+					</li>
+					<li>
+						Bono de bienvenida de 100€ + 10€ gratis con paysafecard
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="casaapuesta">
+			<a href="http://www.todoapuestas.org/trackingTransform.php?bookieid=8&trackid=1&track_site="><img src="https://www.todoapuestas.org/mundial/imagenes/bet365.png" style="width: 150px;"></a>
+			<div class="listaDePuntos">
+				<ul>
+					<li>
+						<a href="http://www.todoapuestas.org/trackingTransform.php?bookieid=8&trackid=1&track_site=">Registrate en Bet365</a>
+					</li>
+					<li>
+						Bono de bienvenida de 100€ + 10€ gratis con paysafecard
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="casaapuesta">
+			<a href="http://www.todoapuestas.org/trackingTransform.php?bookieid=63&trackid=1&track_site="><img src="https://www.todoapuestas.org/mundial/imagenes/luckia.png" style="width: 150px;"></a>
+			<div class="listaDePuntos">
+				<ul>
+					<li>
+						<a href="http://www.todoapuestas.org/trackingTransform.php?bookieid=63&trackid=1&track_site=">Registrate en Luckia</a>
+					</li>
+					<li>
+						Bono de bienvenida de 200€ + 10€ gratis con paysafecard
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="casaapuesta">
+			<a href="http://www.todoapuestas.org/trackingTransform.php?bookieid=1&trackid=1&track_site="><img src="https://www.todoapuestas.org/mundial/imagenes/golden.png" style="width: 150px;"></a>
+			<div class="listaDePuntos">
+				<ul>
+					<li>
+						<a href="http://www.todoapuestas.org/trackingTransform.php?bookieid=1&trackid=1&track_site=">Registrate en Goldenpark</a>
+					</li>
+					<li>
+						Bono de bienvenida de 10€ + 10€ gratis con paysafecard
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="casaapuesta">
+			<a href="http://www.todoapuestas.org/trackingTransform.php?bookieid=67&trackid=1&track_site="><img src="https://www.todoapuestas.org/mundial/imagenes/Sportium2.gif" style="width: 150px;"> </a>
+			<div class="listaDePuntos">
+				<ul>
+					<li>
+						<a href="http://www.todoapuestas.org/trackingTransform.php?bookieid=67&trackid=1&track_site=">Registrate en Sportium</a>
+					</li>
+					<li>
+						Bono de bienvenida de 120 + 10€ gratis con paysafecard
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="casaapuesta">
+			<a href="http://www.todoapuestas.org/trackingTransform.php?bookieid=18&trackid=1&track_site="><img src="https://www.todoapuestas.org/mundial/imagenes/bwin.png" style="width: 150px;"> </a>
+			<div class="listaDePuntos">
+				<ul>
+					<li>
+						<a href="http://www.todoapuestas.org/trackingTransform.php?bookieid=18&trackid=1&track_site=">Registrate en Bwin</a>
+					</li>
+					<li>
+						Bono de bienvenida de 50 + 10€ gratis con paysafecard
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="casaapuesta">
+			<a href="http://www.todoapuestas.org/trackingTransform.php?bookieid=31&trackid=1&track_site="><img src="https://www.todoapuestas.org/mundial/imagenes/paf.png" style="width: 150px;"> </a>
+			<div class="listaDePuntos">
+				<ul>
+					<li>
+						<a href="http://www.todoapuestas.org/trackingTransform.php?bookieid=31&trackid=1&track_site=">Registrate en Paf</a>
+					</li>
+					<li>
+						Bono de bienvenida de 20 + 10€ gratis con paysafecard
+					</li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
+</div>
+{%else%}
+<div class="formulario" style="padding: 10px;">
+
+	<h3>Hemos recibido tu solicitud y en breve te contestaremos.</h3>
+
+	<h3>Te contestaremos cuando los datos estén validados con las casas de apuestas. No es un proceso automático y en determinadas ocasiones pueden haber retraso. Si pasados 10 días no has obtenido respuesta por nuestra parte, envíanos un mail a promos @ todoapuestas.org para ver si hay
+	algún problema. En el resto de casos nunca contestamos a los mensajes.</h3>
+
+	<h3>Si tu solicitud se hace en agosto o en navidades el tiempo de espera puede ser mayor ya que es cuando los empleados de las casas se cogen vacaciones.</h3>
+
+	<h3>Esta totalmente prohibido contactar con las casas directamente para estas promociones ya que NO son promociones de ellos, sino de todoapuestas y en muchos casos con las personas que contactéis ni sabrán de estas promociones. Si una casa nos comenta que hay usuarios
+	reclamando bonos, automáticamente ese usuario no podrá obtener ninguna promoción de todoapuestas y sus blogs.</h3>
+
+	<h3>Gracias por registrate con nosotros</h3>
+</div>
+{%endif%}
+
+{%endblock%}

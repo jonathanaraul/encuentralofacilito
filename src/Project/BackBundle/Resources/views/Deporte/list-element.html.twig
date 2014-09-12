@@ -1,0 +1,5 @@
+<tr id="fila_{{element.id}}">
+	<td >{{element.id}}</td>
+    <td >{{element.nombre}}</td>  
+  {% include 'ProjectBackBundle:Helpers:listado-edit.html.twig'  with {'tipo':nombreClase,'rutaEditar':'project_back_maestros_'~nombreRuta~'_edit'}  %}
+</tr>

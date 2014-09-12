@@ -1,0 +1,7 @@
+<tr id="fila_{{element.id}}">
+  <td >{{element.id}}</td>
+  <td >{{element.trackSite}}</td>
+  <td >{{element.bookie}}</td>
+  <td >{{element.clickTime.format('d/m/Y H:i:s')}}</td>  
+  {% include 'ProjectBackBundle:Helpers:listado-edit-delete-basico.html.twig'  with {'tipo':nombreClase,'rutaEditar':'project_back_'~nombreRuta~'_edit'}  %}
+</tr>

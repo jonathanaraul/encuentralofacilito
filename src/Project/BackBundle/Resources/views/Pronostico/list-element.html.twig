@@ -1,0 +1,13 @@
+<tr id="fila_{{element.id}}">
+	<td >{{element.id}}</td>
+	<td >{{element.nombre}}</td>
+	<td >{{element.evento}}</td>
+	<td >{{element.fecha}}</td>
+	<td class="hidden-phone">{{element.pronostico}}</td>
+	<td class="hidden-phone">{{element.cuota}}</td>
+	<td class="hidden-phone">{{element.skate}}</td>
+	<td class="hidden-phone">{{element.casaApuestas}}</td>
+	<td class="hidden-phone">{{element.created.format('d/m/Y H:i:s')}}</td>
+	<td class="hidden-phone">{{element.updated.format('d/m/Y H:i:s')}}</td>
+    {% include 'ProjectBackBundle:Helpers:listado-edit-delete.html.twig'  with {'tipo':nombreClase,'rutaEditar':'project_back_parser_'~nombreRuta~'_edit'}  %}
+</tr>

@@ -1,0 +1,85 @@
+{% extends '::base.html.twig' %}
+
+{% block pagesScriptsBottom %}
+{%endblock%}
+
+{% block pageContent  %}
+<div class="main-container container-fluid" id="sinlogin">
+	<a class="menu-toggler" id="menu-toggler" href="#"> <span class="menu-text"></span> </a>
+
+	{% include '::sidebar.html.twig'  with {'clase': 'gris'}  %}
+
+	<div class="main-content">
+
+		{# include 'ProjectBackBundle:Architecture:breadcrumb.html.twig'  with {'clase': 'gris'} #}
+		<div class="page-content">
+			{% include 'ProjectBackBundle:'~nombreClase~':page-header.html.twig' with {'subtitulo':'listado'} %}
+
+			<div class="row-fluid">
+				<div class="span12">
+					<!--PAGE CONTENT BEGINS-->
+					<!--PAGE CONTENT BEGINS-->
+					{%if pagination.getTotalItemCount>0%}
+					<div class="row-fluid">
+						<div class="span12">
+
+							{{ form_start(form, {'action': path('project_back_peticion_pin_paysafecard_list'), 'method': 'POST','attr': {'style': 'padding: 5px'}}) }}
+							{{ form_widget(form.nick, {'attr': {'placeHolder': 'Nick','class':'span2','style':'margin-right: 10px;'}}) }}
+							{{ form_widget(form.email, {'attr': {'placeHolder': 'Email','class':'span2','style':'margin-right: 10px;'}}) }}
+							{{ form_widget(form.emailUsuario, {'attr': {'placeHolder': 'Email usuario','class':'span2','style':'margin-right: 10px;'}}) }}
+							{{ form_widget(form.nickUsuario, {'attr': {'placeHolder': 'Nick usuario','class':'span2','style':'margin-right: 10px;'}}) }}
+							{{ form_widget(form.ip, {'attr': {'placeHolder': 'IP','class':'span2','style':'margin-right: 10px;'}}) }}
+							<input type="submit" class="btn3" value="Buscar" style="margin-bottom: 12px;">
+
+							{{ form_end(form) }}
+
+							<table id="sample-table-1" class="table table-striped table-bordered table-hover">
+								<thead>
+									<tr>
+										<th>{{ knp_pagination_sortable(pagination, 'Id', 'o.id') }}</th>
+										<th>Bookie</th>
+										<th>{{ knp_pagination_sortable(pagination, 'Nick', 'o.nick') }}</th>
+										<th>{{ knp_pagination_sortable(pagination, 'Email', 'o.email') }}</th>
+										<th>{{ knp_pagination_sortable(pagination, 'Depósito', 'o.desposito') }}</th>
+										<th  class="hidden-phone">{{ knp_pagination_sortable(pagination, 'Fecha registro', 'o.fechaRegistro') }}</th>
+										<th  class="hidden-phone">{{ knp_pagination_sortable(pagination, 'Fecha deposito', 'o.fechaDeposito') }}</th>
+										<th  class="hidden-phone">{{ knp_pagination_sortable(pagination, 'Nick usuario', 'o.nickUsuario') }}</th>
+										<th  class="hidden-phone">{{ knp_pagination_sortable(pagination, 'Email usuario', 'o.emailUsuario') }}</th>
+										<th  class="hidden-phone">{{ knp_pagination_sortable(pagination, 'Fecha acreditacion', 'o.fechaAcreditacion') }}</th>
+										<th class="hidden-phone">{{ knp_pagination_sortable(pagination, 'IP', 'o.ip') }}</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									{%for element in pagination %}
+									{% include 'ProjectBackBundle:'~nombreClase~':list-element.html.twig'  with {'element':element}  %}
+									{%endfor%}
+								</tbody>
+							</table>
+							<div class="row-fluid">
+								<div class="span6">
+									<div class="dataTables_info" id="sample-table-2_info">
+										{{ pagination.getTotalItemCount }} Resultados
+									</div>
+								</div>
+								<div class="span6">
+									<div class="dataTables_paginate paging_bootstrap pagination" style="margin: 0px;font-size: 18px;">
+										{{ knp_pagination_render(pagination) }}
+									</div>
+								</div>
+							</div>
+
+						</div><!--/span-->
+					</div><!--/row-->
+					<div class="hr hr-18 dotted hr-double"></div>
+					{%else%}
+					{% include 'ProjectBackBundle:Helpers:busqueda-fallida.html.twig' %}
+					{%endif%}
+					<!--PAGE CONTENT ENDS-->
+				</div><!--/.span-->
+			</div><!--/.row-fluid-->
+		</div><!--/.page-content-->
+	</div><!--/.main-content-->
+</div><!--/.main-container-->
+
+{%endblock%}

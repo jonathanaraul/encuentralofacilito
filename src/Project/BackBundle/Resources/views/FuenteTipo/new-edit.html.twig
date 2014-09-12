@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+
+{% form_theme form with ['ProjectBackBundle:Form:fields.html.twig',
+'ProjectBackBundle:Form:_'~nombreRuta~'_published_widget.html.twig',
+'ProjectBackBundle:Form:_'~nombreRuta~'_save_widget.html.twig',
+] %}
+
+{% block pagesScriptsBottom %}
+<script src="{{asset('admin/js/bootstrap-tag.min.js')}}"></script>
+<script type="text/javascript">
+	//we could just set the data-provide="tag" of the element inside HTML, but IE8 fails!
+	var tag_input = $('#page_tags');
+	if (!( /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase())))
+		tag_input.tag({
+			placeholder : tag_input.attr('placeholder')
+		});
+	else {
+		//display a textarea for old IE, because it doesn't support this plugin or another one I tried!
+		tag_input.after('<textarea id="' + tag_input.attr('id') + '" name="' + tag_input.attr('name') + '" rows="3">' + tag_input.val() + '</textarea>').remove();
+		//$('#form-field-tags').autosize({append: "\n"});
+	}
+</script>
+{%endblock%}
+
+{% block pageContent  %}
+<div class="main-container container-fluid" id="sinlogin">
+	<a class="menu-toggler" id="menu-toggler" href="#"> <span class="menu-text"></span> </a>
+
+	{% include '::sidebar.html.twig'  with {'clase': 'gris'}  %}
+	<div class="main-content">
+		<div class="page-content">
+			{%set subtitulo = 'Crear nueva'%}
+			{%if accion!='nuevo'%}{%set subtitulo = 'Editar'%}{%endif%}
+			{% include 'ProjectBackBundle:'~nombreClase~':page-header.html.twig'  with {'subtitulo':subtitulo}  %}
+
+			{{ form(form, {'action': url, 'method': 'POST','attr': {'class':'form-horizontal'}}) }}
+		</div><!--/.page-content-->
+	</div><!--/.main-content-->
+</div><!--/.main-container-->
+{%endblock%}

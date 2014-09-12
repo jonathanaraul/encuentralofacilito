@@ -1,0 +1,14 @@
+<tr id="fila_{{element.id}}">
+  <td >{{element.id}}</td>
+  <td >{%if usuarios[element.userId] is defined%}{{usuarios[element.userId]}}{%else%}No encontrado{%endif%}</td>
+  <td >{%if bookies[element.bookie] is defined%}{{bookies[element.bookie]}}{%
+    else%}No encontrado{%endif%}</td>
+  <td >{{element.account}}</td>  
+  <td >{{element.depositado}}</td>
+  <td >{{element.dineroActual}}</td>
+  <td >{{element.bono}}</td>  
+  <td >{{element.rollover}}</td>
+  <td >{{element.cantidadBono}}</td>
+  <td >{{element.ganancias}}</td>  
+  {% include 'ProjectBackBundle:Helpers:listado-edit-delete-basico.html.twig'  with {'tipo':nombreClase,'rutaEditar':'project_back_'~nombreRuta~'_edit'}  %}
+</tr>

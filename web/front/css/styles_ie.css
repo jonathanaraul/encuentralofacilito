@@ -1,0 +1,9 @@
+/* CSS Document */
+
+#footer {
+	position:relative;
+    clear: left;
+    width: 100%;
+    height: 50px;
+    background: #666;
+}

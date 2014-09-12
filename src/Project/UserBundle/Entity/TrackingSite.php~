@@ -1,0 +1,108 @@
+<?php
+
+namespace Project\UserBundle\Entity;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
+use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Gedmo\Mapping\Annotation as Gedmo;
+
+/**
+ * TrackingSite
+ *
+ * @ORM\Table(name="tracking_site")
+ * @ORM\Entity
+ */
+class TrackingSite
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="track_site", type="string", length=255, nullable=false)
+     */
+    private $trackSite;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="bookie", type="integer", nullable=false)
+     */
+    private $bookie;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="click_time", type="datetime", nullable=false)
+     */
+    private $clickTime;
+
+
+    /**
+     * Set trackSite
+     *
+     * @param string $trackSite
+     * @return TrackingSite
+     */
+    public function setTrackSite($trackSite)
+    {
+        $this->trackSite = $trackSite;
+
+        return $this;
+    }
+
+    /**
+     * Get trackSite
+     *
+     * @return string 
+     */
+    public function getTrackSite()
+    {
+        return $this->trackSite;
+    }
+
+    /**
+     * Set bookie
+     *
+     * @param integer $bookie
+     * @return TrackingSite
+     */
+    public function setBookie($bookie)
+    {
+        $this->bookie = $bookie;
+
+        return $this;
+    }
+
+    /**
+     * Get bookie
+     *
+     * @return integer 
+     */
+    public function getBookie()
+    {
+        return $this->bookie;
+    }
+
+    /**
+     * Set clickTime
+     *
+     * @param \DateTime $clickTime
+     * @return TrackingSite
+     */
+    public function setClickTime($clickTime)
+    {
+        $this->clickTime = $clickTime;
+
+        return $this;
+    }
+
+    /**
+     * Get clickTime
+     *
+     * @return \DateTime 
+     */
+    public function getClickTime()
+    {
+        return $this->clickTime;
+    }
+}

@@ -1,0 +1,21 @@
+{%if pagination.getTotalItemCount>0%}
+<ul class="ace-thumbnails">
+	{%for element in pagination %}
+	{% include 'ProjectBackBundle:Noticia:list-element-noticia.html.twig'  with {'element':element}  %}
+	{%endfor%}
+</ul>
+<div class="row-fluid" style="width:100%">
+	<div class="span6" style="margin-top: 21px;">
+		<div class="dataTables_info" id="sample-table-2_info">
+			{{ pagination.getTotalItemCount }} Resultados
+		</div>
+	</div>
+	<div class="span6" id="paginacion-modal-imagenes">
+		<div class="dataTables_paginate paging_bootstrap pagination" style="margin: 0px;font-size: 18px;">
+			{{ knp_pagination_render(pagination) }}
+		</div>
+	</div>
+</div>
+{%else%}
+{% include 'ProjectBackBundle:Helpers:busqueda-fallida.html.twig' %}
+{%endif%}

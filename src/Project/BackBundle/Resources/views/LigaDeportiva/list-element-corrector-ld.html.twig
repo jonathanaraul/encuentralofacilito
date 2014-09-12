@@ -1,0 +1,44 @@
+{%for key,element in events %}
+<tr id="fila_{{key}}">
+	<td >{{element.fecha}}</td>
+	<td >{{element.grupo}}</td>
+	<td >{{element.nombre_evento}}</td>
+	<td>
+		<select id="event_{{key}}" name="event_{{key}}" >
+			<option value='-1' selected='selected'>No corregir</option>
+			<option value='-2'>Nulo</option>
+			{%for option in options[key]%}
+                <option value="{{option.pronostico_id}}">
+					{{option.nombre_pronostico}} ({{option.cuota}}) 
+				</option>
+			{%endfor%}
+               
+		</select>
+   </td>
+	<td>
+	<div class="hidden-phone visible-desktop btn-group" tipo="" objeto="{{key}}" >
+		<button class="btn btn-primary btn-info corregir-evento-corrector-ld" >
+			<i class="icon-wrench bigger-120"></i>
+		</button>
+		<button class="btn btn-mini btn-danger borrar-listado-corrector-ld">
+			<i class="icon-remove bigger-120"></i>
+		</button>
+	</div>
+	<div class="hidden-desktop visible-phone">
+		<div class="inline position-relative">
+			<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown">
+				<i class="icon-cog icon-only bigger-110"></i>
+			</button>
+			<ul class="dropdown-menu dropdown-icon-only dropdown-yellow pull-right dropdown-caret dropdown-close" tipo="" objeto="{{key}}" >
+				<li class="corregir-evento-corrector-ld">
+					<a href="javascript:void(0)" class="tooltip-success editar" data-rel="tooltip" title="Corregir" objeto="{{element.id_evento}}"> <span class="green"> <i class="icon-wrench bigger-120"></i> </span> </a>
+				</li>
+				<li class="borrar-listado-corrector-ld">
+					<a href="javascript:void(0)" class="tooltip-error borrar" data-rel="tooltip" title="Delete" > <span class="red"> <i class="icon-remove bigger-120"></i> </span> </a>
+				</li>
+			</ul>
+		</div>
+	</div>
+    </td>
+</tr>
+{%endfor%}

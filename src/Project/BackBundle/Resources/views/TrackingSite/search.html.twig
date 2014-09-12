@@ -1,0 +1,34 @@
+					<div class="row-fluid">
+						<div class="span12">
+							<div id="sample-table-2_wrapper" class="dataTables_wrapper" role="grid">
+								<table id="sample-table-2" class="table table-striped table-bordered table-hover">
+									<thead>
+										<tr>
+											
+											<th>{{ knp_pagination_sortable(pagination, 'Track Site', 'o.trackSite') }}</th>
+											<th class="hidden-phone" >{{ knp_pagination_sortable(pagination, 'Bookie', 'o.bookie') }}</th>
+											<th class="hidden-phone" >{{ knp_pagination_sortable(pagination, 'Click Time', 'o.clickTime') }}</th>
+											<th></th>
+										</tr>
+									</thead>
+									<tbody>
+										{%for element in pagination %}
+										{% include 'ProjectBackBundle:'~nombreClase~':list-element.html.twig'  with {'element':element}  %}
+										{%endfor%}
+									</tbody>
+								</table>
+								<div class="row-fluid" style="margin-top: -20px;">
+									<div class="span6">
+										<div class="dataTables_info" id="sample-table-2_info">
+											{% include 'ProjectBackBundle:Pagination:resultados.html.twig' with {'subtitulo':'listado'} %}
+										</div>
+									</div>
+									<div class="span6">
+										<div class="dataTables_paginate paging_bootstrap pagination">
+											{{ knp_pagination_render(pagination, 'ProjectBackBundle:Pagination:pagination.html.twig') }}											
+										</div>
+									</div>
+								</div>
+							</div>
+						</div><!--/span-->
+					</div><!--/row-->

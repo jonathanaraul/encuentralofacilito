@@ -1,0 +1,904 @@
+/* CSS Document */ /* base.css | v0.1 (10172009) | Thierry Koblentz
+ *
+ * The purpose of this styles sheet is to set default styles for common browsers and address common issues (missing scrollbar, extended buttons in IE, gap below images, etc.)
+ */
+	/* using height:100% on html and body allows to style containers with a 100% height
+ * the overflow declaration is to make sure there is a gutter for the scollbar in all browsers regardless of content
+ * note that there is no font-size declaration set in this rule. If you wish to include one, you should use font-size: 100.01% to prevent bugs in IE and Opera
+ */
+
+
+html,
+body {
+    overflow: auto;
+}
+
+html {
+	overflow-y: scroll;
+	font-size: 13px;
+	overflow-x: hidden;
+	margin: 0px;
+	padding: 0px;
+}
+
+/* not all browsers set white as the default background color 
+ * color is set to create not too much contrast with the background color
+ * line-height is to ensure that text is legible enough (that there is enough space between the upper and lower line) 
+ */
+body {
+	background: #FFF;
+	color: #444;
+	font-family: Franklin Gothic Light, "Segoe UI", Calibri, "Myriad Pro",
+		Myriad, "Trebuchet MS", Helvetica, Arial, sans-serif;
+	font-stretch: narrower;
+	font-size: 13px;
+    position: relative;
+}
+
+#footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background: #222;
+	padding: 2px;
+	color: #CCCCCC;
+	opacity: 0.9;
+	-moz-opacity: 0.9;
+	filter: alpha(opacity =   90);
+	border-top: 1px solid #111;
+	margin-left: -10px;
+}
+
+#footer a {
+	color: #FFFFFF;
+	text-decoration: none
+}
+
+textarea {
+	font: 12px Arial, Helvetica, sans-serif
+}
+
+/* this choice of font-family is supposed to render text the same across platforms
+ * letter-spacing makes the font a bit more legible
+ */
+a:link {
+	color: #000;
+	text-decoration: none;
+}
+.casaapuesta{
+  float: left;
+width: 25%;
+}
+div.casaapuesta:hover{
+  background-color: rgb(255, 255, 176);
+}
+tr.color-celda{
+  background-color: rgb(255, 255, 176);
+}
+.formulario{
+	border: 1px solid #FFCE15;padding: 0px;width:900px;
+}
+a:visited {
+	text-decoration: none;
+	color: #000;
+}
+.selectorpay{
+	width: 153px;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* Mundial */
+#bizq, #bder {
+    position:fixed;
+    top: 35px;
+    bottom:29px;
+    z-index:1000;
+    background:#2097d1 !important;
+}
+#bizq {
+    left: 0;
+}
+#bder {
+    right: 0;
+}
+#bizq img {
+    float: right;
+}
+#bder img {
+    float: left;
+}
+
+
+.CoverPop-open,
+.CoverPop-open body {
+    overflow: hidden;
+}
+
+#CoverPop-cover {
+    display: none;
+    position: fixed;
+    overflow-y: scroll;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    -webkit-animation: fade-in .25s ease-in;
+    -moz-animation-name: fade-in .25s ease-in;
+    -ms-animation-name: fade-in .25s ease-in;
+    -o-animation-name: fade-in .25s ease-in;
+    animation-name: fade-in .25s ease-in;
+}
+
+.CoverPop-open #CoverPop-cover {
+    display: block;
+}/*
+.CoverPop-close {
+    float:right;
+}*/
+
+
+@-webkit-keyframes fade-in {
+    0% { opacity: 0; }
+    25% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.splash-center {
+    text-align: center;
+    max-width: 800px;
+    padding: 0px;
+    background: #fff;
+    margin: 10% auto 0;
+}
+
+.splash-text {
+    font-size: 20px;
+    padding: 20px 0;
+}
+.splash-link {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    background-color: #3c8dbc;
+    border-color: #367fa9;
+    color: #fff !important;
+    text-decoration: none;
+}
+.splash-link:hover {
+    background-color: #367fa9;
+    text-decoration: none;
+}
+.splash {
+    background-color: rgb(200,200,200);
+    background-color: rgba(200,200,200,0.90);
+}
+
+.close-splash {
+    margin: 0;
+    font-size: 12px;
+}
+
+
+
+
+
+
+#parrafo a:link {
+	color: #000;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+#parrafo a:visited {
+	text-decoration: none;
+	color: #000;
+	font-weight:bold;
+}
+
+#parrafo a:hover {
+	text-decoration: underline;
+	font-weight:bold;
+}
+
+
+/* this is to prevent border from showing around fieldsets and images (i.e., images inside anchors)
+ */
+fieldset,img {
+	border: 0;
+}
+
+/* to prevent a gap from showing below images in some browsers 
+ */
+img {
+	vertical-align: middle;
+}
+
+/* we use margin for hr for the same reason we do for table 
+ */
+hr {
+	margin-right: 30px;
+	border-style: inset;
+	border-width: 1px;
+}
+
+/* top margin solution */
+	/* this is my approach to create white space between elements, you do not have to adhere to it
+ * rather than stylling these elements with top and bottom margin, or simply bottom margin I only use top margin
+ */
+h1,h2,h3,h4,h5,h6,p,pre,dt,li,hr,legend,input,button,textarea,select,address,table
+	{
+	margin-top: 0;
+}
+
+h3 {
+	font-family: "Cambria";
+}
+
+/* classes
+ * to style elements with the default padding and margin we set on headings, paragraphs, lists, etc.
+ * for example, this class could be used on a DIV inside a blockquote or a DIV inside a FORM, etc.
+ */
+.block {
+	padding: 0 30px;
+	margin-top: 1.2em;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+#wrapper {
+	width: 950px;
+	text-align: left;
+	border: 1px solid #DDD;
+}
+
+#header {
+	font-style: italic;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	width: 950px;
+	background: #FFF;
+	padding-left: 0px;
+	padding-right: 00px;
+	margin-top: -10px;
+}
+
+#content {
+	width: 950px;
+	background: white;
+	text-align: left;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+#navigation {
+	font-family: Georgia;
+	font-size: 30px position :   relative;
+	display: block;
+	height: 33px;
+	background: #FFF;
+	border-top: 4px solid #ffce15;
+	width: 950px;
+	margin-bottom: 10px;
+}
+
+#navigation ul {
+	margin: 0;
+	padding: 0;
+	width: 950px;
+}
+
+#navigation ul li {
+	display: block;
+	margin: 0;
+	text-align: center;
+	width: 102px;
+	display: inline;
+}
+
+#navigation ul li a {
+	display: block;
+	margin: 0;
+	text-align: center;
+	width: 102px;
+	display: inline;
+	float: left;
+	color: #464646;
+	padtext-decoration: none;
+	padding: 6px 0px 0 0px;
+	height: 27px;
+}
+
+#navigation ul li a:hover {
+	display: block;
+	margin: 0;
+	text-align: center;
+	width: 102px;
+	display: inline;
+	color: #f0f0f0;
+	text-decoration: none;
+	background: #ffce15
+}
+
+#navigation ul li a.current {
+	display: block;
+	margin: 0;
+	text-align: center;
+	width: 102px;
+	display: inline;
+	color: #FFF;
+	font-weight: bold;
+	background: #ffce15;
+}
+
+#navigation ul li a.long_current {
+	display: block;
+	margin: 0;
+	text-align: center;
+	width: 102px;
+	display: inline;
+	color: #FFF;
+	font-weight: bold;
+	background: #ffce15;
+}
+
+#navigation ul li a.medium_current {
+	display: block;
+	margin: 0;
+	text-align: center;
+	width: 84px;
+	display: inline;
+	color: #FFF;
+	font-weight: bold;
+	background: #ffce15;
+}
+
+#navigation ul li a.short_current {
+	display: block;
+	margin: 0;
+	text-align: center;
+	width: 65px;
+	display: inline;
+	color: #FFF;
+	font-weight: bold;
+	background: #ffce15;
+}
+
+.btn1 {
+	border: 1px solid #999;
+	color: #000;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: pointer;
+	background: #FFCE15;
+	-moz-border-radius: 3px;
+	font-size: 12px;
+	font-family: Georgia;
+}
+
+.btn1:hover {
+	border: 1px solid #666;
+	color: #fff
+}
+
+.btn2 {
+	width: 33%;
+	padding: 5px;
+	margin-top: 10px;
+	font-weight: bold;
+	cursor: pointer;
+	color: #333
+}
+
+.btn3 {
+	border: 1px solid #999;
+	color: #333;
+	cursor: pointer;
+	background: #f0f0f0;
+	-moz-border-radius: 3px;
+	font-size: 11px;
+	text-shadow: #f0f0f0 1px 1px;
+	font-family: Arial;
+}
+
+.btn1:hover {
+	border: 1px solid #666;
+	color: #000
+}
+
+.btn_more {
+	width: 100%;
+	padding: 5px;
+	margin-top: 10px;
+	font-weight: bold;
+	cursor: pointer;
+	color: #669999;
+	background: url(/images/bg_btn1.gif) repeat-x;
+	border: 1px solid #c9c9c9;
+	-moz-border-radius: 3px;
+}
+
+.btn_more:hover {
+	border: 1px solid #999;
+	color: #006699;
+}
+
+#module {
+	padding: 1px;
+	background: #FFF;
+	border: 1px solid #ccc;
+	margin-bottom: 20px;
+}
+
+#module p {
+	padding: 5px;
+	margin-bottom: 0px;
+}
+
+#module .content {
+	background: #FFF;
+	padding: 15px;
+}
+
+#module input {
+	padding: 2px;
+	border: 1px solid #CCCCCC;
+}
+
+#module textarea {
+	padding: 2px;
+	border: 1px solid #CCCCCC;
+	width: 99%
+}
+
+#module .msg {
+	padding: 3px;
+	background: #FFFFCC;
+	border: 1px solid #FFCC99;
+	color: #333333;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	-moz-border-radius: 3px;
+}
+
+#module .btn1 {
+	border: 1px solid #CCC;
+	color: #464646;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	cursor: pointer;
+	background: #FFF;
+	-moz-border-radius: 3px;
+	font-size: 12px;
+}
+
+#module .btn1:hover {
+	border: 1px solid #CCC .   msg {     padding :   3px;
+	background: #FFFFCC;
+	border: 1px solid #DDD;
+	color: #333333;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	-moz-border-radius: 3px;
+}
+
+#cartera table tr td {
+	border-bottom: 1px solid #CCCCCC;
+	padding: 5px;
+}
+
+tr.grey {
+	background: #E4F1F1;
+}
+
+.unseen {
+	padding: 5px;
+	border-bottom: 1px solid #FFCC99;
+	border-top: 1px solid #FFCC99;
+	background: #FFFFCC;
+	cursor: pointer;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.unseen:hover {
+	background: #FFCC99;
+}
+
+.wall_date {
+	font-size: 11px;
+	color: #666666;
+}
+
+#separador {
+	border-bottom: 1px solid #006699;
+	background: #6699CC;
+	height: 2px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.avatar {
+	padding: 1px;
+	border: 1px solid #CCCCCC;
+}
+
+.avatar:hover {
+	padding: 1px;
+	background: #F8BE94;
+	border: 1px solid #F8BE94;
+	cursor: pointer;
+}
+
+.button,.button:visited { /* botones gen?ricos */
+	padding: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	color: #333333;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	padding: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.button:hover { /* el efecto hover */
+	color: #000;
+}
+
+.button:active { /* el efecto click */
+	top: 1px;
+}
+
+/* botones peque?os */
+.small.button,.small.button:visited {
+	font-size: 13px;
+	font-family: "Tahoma";
+}
+
+.orange.button,.orange.button:visited {
+	background-color: #eee;
+	font-weight: bold;
+	border: 1px solid #ccc;
+}
+
+.orange.button:hover {
+	background-color: #facf9c;
+}
+
+.module_break {
+	border-bottom: 1px solid #999;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+}
+
+.error_form {
+	background: #666666;
+	color: #EEE;
+	font-weight: bold;
+	font-size: 12px;
+	padding: 5px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+#registro .input {
+	padding: 8px;
+	font-size: 16px;
+	font-weight: bold;
+	width: 250px;
+	border: 1px solid #464646;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	margin-bottom: 5px;
+}
+
+#registro .btn {
+	padding: 10px;
+	font-size: 16px;
+	border: 1px solid #464646;
+	margin-top: 10px;
+	cursor: pointer;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	margin-bottom: 5px;
+}
+
+#menu_conf ul {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+#menu_conf ul li {
+	padding: 5px;
+	border-bottom: 1px solid #CCCCCC;
+	border-top: 1px solid #FFFFFF;
+	background: url(/images/separator.png) no-repeat left;
+	padding-left: 20px;
+}
+
+#menu_conf ul li.active {
+	font-weight: bold;
+	text-decoration: underline;
+	background-color: #ffffff
+}
+
+#menu_conf ul li:hover {
+	background-color: #ffffff
+}
+
+#signup-btn {
+	margin: 15px 0;
+	padding: 0;
+}
+
+#signup-btn a {
+	background: #fa2 url(../images/bg-btn-signup.png) repeat-x 0 0;
+	display: block;
+	padding: 8px 10px;
+	border: 1px solid #fa2;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-decoration: none;
+	text-align: center;
+	color: #333;
+	text-shadow: 0 1px 0 #fe6;
+	font: bold 12px Arial, Sans-serif;
+}
+
+#signup-btn a:hover,#signup-btn a:focus {
+	background-position: 0 -5px;
+	color: #111;
+}
+
+#signup-btn a:active {
+	background-image: none;
+}
+
+.ui-autocomplete {
+	max-height: 100px;
+	overflow-y: auto;
+}
+
+/* IE 6 doesn't support max-height
+	 * we use height instead, but this forces the menu to always be this tall
+	 */
+* html .ui-autocomplete {
+	height: 100px;
+}
+
+btn_registration
+
+{
+
+width: 200px;
+
+font-size: 18px;
+
+padding-top: 10px;
+
+padding-right: 10px;
+
+padding-bottom: 10px;
+
+padding-left: 10px;
+
+border-top-width: 1px;
+
+border-right-width-value: 1px;
+
+border-right-width-ltr-source: physical;
+
+border-right-width-rtl-source: physical;
+
+border-bottom-width: 1px;
+
+border-left-width-value: 1px;
+
+border-left-width-ltr-source: physical;
+
+border-left-width-rtl-source: physical;
+
+border-top-style: solid;
+
+border-right-style-value: solid;
+
+border-right-style-ltr-source: physical;
+
+border-right-style-rtl-source: physical;
+
+border-bottom-style: solid;
+
+border-left-style-value: solid;
+
+border-left-style-ltr-source: physical;
+
+border-left-style-rtl-source: physical;
+
+border-top-color: #698e4b;
+
+border-right-color-value: #698e4b;
+
+border-right-color-ltr-source: physical;
+
+border-right-color-rtl-source: physical;
+
+border-bottom-color: #698e4b;
+
+border-left-color-value: #698e4b;
+
+border-left-color-ltr-source: physical;
+
+border-left-color-rtl-source: physical;
+
+color: #ffffff;
+
+cursor: pointer;
+
+background-color: transparent;
+
+background-image: url("http://bolsa.com/images/btn_registration.gif");
+
+background-repeat: repeat-x;
+
+background-attachment: scroll;
+
+background-position: 0% 0%;
+
+font-weight: bold;
+
+}
+
+
+.parte-izquierda {
+
+	float:left;
+	width:610px;
+	margin-right:20px;
+	height:1000px;
+}
+
+.parte-derecha {
+
+	float:left;
+	width:300px;
+
+}
+
+.container-izquierda{	
+		position:relative;
+		text-align:left;
+		width:600px;	
+		float:left
+		}
+
+
+.container-derecha{	
+		position:relative;
+		text-align:left;
+		width:300px;	
+		float:left
+		}
+
+.content-home {
+	width: 950px;
+	background: white;
+	text-align: left;
+	padding-left: 0px;
+	padding-right: 0px;
+	float:left;
+}
+
+.entry img 
+
+{
+
+border-top-width: 1px;
+
+border-right-width-value: 1px;
+
+border-right-width-ltr-source: physical;
+
+border-right-width-rtl-source: physical;
+
+border-bottom-width: 1px;
+
+border-left-width-value: 1px;
+
+border-left-width-ltr-source: physical;
+
+border-left-width-rtl-source: physical;
+
+border-top-style: solid;
+
+border-right-style-value: solid;
+
+border-right-style-ltr-source: physical;
+
+border-right-style-rtl-source: physical;
+
+border-bottom-style: solid;
+
+border-left-style-value: solid;
+
+border-left-style-ltr-source: physical;
+
+border-left-style-rtl-source: physical;
+
+border-top-color: #dddddd;
+
+border-right-color-value: #dddddd;
+
+border-right-color-ltr-source: physical;
+
+border-right-color-rtl-source: physical;
+
+border-bottom-color: #dddddd;
+
+border-left-color-value: #dddddd;
+
+border-left-color-ltr-source: physical;
+
+border-left-color-rtl-source: physical;
+
+padding-top: 4px;
+
+padding-right: 4px;
+
+padding-bottom: 4px;
+
+padding-left: 4px;
+
+background-color: #ffffff;
+
+background-image: none;
+
+background-repeat: repeat;
+
+background-attachment: scroll;
+
+background-position: 0% 0%;
+
+max-width: 630px;
+
+}
+
+.navh2{
+	font-size:13px;
+}
+
+.datagrid table { border-collapse: collapse; text-align: left; width: 100%; } .datagrid {font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 1px solid #006699; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }.datagrid table td, .datagrid table th { padding: 3px 10px; }.datagrid table thead th {background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #00557F) );background:-moz-linear-gradient( center top, #006699 5%, #00557F 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F');background-color:#006699; color:#ffffff; font-size: 15px; font-weight: bold; border-left: 1px solid #0070A8; } .datagrid table thead th:first-child { border: none; }.datagrid table tbody td { color: #00496B; border-left: 1px solid #E1EEF4;font-size: 12px;font-weight: normal; }.datagrid table tbody .alt td { background: #E1EEF4; color: #00496B; }.datagrid table tbody td:first-child { border-left: none; }.datagrid table tbody tr:last-child td { border-bottom: none; }.datagrid table tfoot td div { border-top: 1px solid #006699;background: #E1EEF4;} .datagrid table tfoot td { padding: 0; font-size: 12px } .datagrid table tfoot td div{ padding: 2px; }.datagrid table tfoot td ul { margin: 0; padding:0; list-style: none; text-align: right; }.datagrid table tfoot  li { display: inline; }.datagrid table tfoot li a { text-decoration: none; display: inline-block;  padding: 2px 8px; margin: 1px;color: #FFFFFF;border: 1px solid #006699;-webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #00557F) );background:-moz-linear-gradient( center top, #006699 5%, #00557F 100% );filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F');background-color:#006699; }.datagrid table tfoot ul.active, .datagrid table tfoot ul a:hover { text-decoration: none;border-color: #006699; color: #FFFFFF; background: none; background-color:#00557F;}div.dhtmlx_window_active, div.dhx_modal_cover_dv { position: fixed !important; }
+
+

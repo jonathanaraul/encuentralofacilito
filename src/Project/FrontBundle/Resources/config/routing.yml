@@ -1,0 +1,6 @@
+project_front_peticion_pin_paysafecard:
+    pattern:  /peticion-pin-paysafecard/
+    defaults: { _controller: ProjectFrontBundle:PeticionPinSafecard:index }
+project_front_registro_casas_apuestas:
+    pattern:  /registro-casas-apuestas/
+    defaults: { _controller: ProjectFrontBundle:RegistroCasasApuestas:index }
